@@ -26,13 +26,13 @@ const LeftBar = () => {
     console.log(location);
   }, [location]);
   return (
-    <aside className="fixed top-0 left-0 flex flex-col h-screen px-10 py-5 bg-white w-fit left-bar">
+    <aside className="fixed top-0 left-0 flex flex-col h-screen px-10 py-20 bg-white w-fit left-bar">
       <Link to="/" className="flex self-center w-24 h-24">
         <img src={logo} alt="Regress Logo" />
       </Link>
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
-          <ul className="flex flex-col gap-1 text-left">
+          <ul className="flex flex-col gap-2 text-left">
             {}
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
             <NavButton
