@@ -1,9 +1,13 @@
 import React from "react";
+import { LeftBar } from "../components";
 
-export default function PredictionsPage() {
+const PredictionsPage = () => {
     return (
-        <div>
-            <h2>Dự đoán</h2>
-        </div>
+        <>
+            <LeftBar />
+            <h2>Du doan</h2>
+        </>
     );
 }
+
+export default PredictionsPage;
