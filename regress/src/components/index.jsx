@@ -1,2 +1,3 @@
 import LeftBar from "./LeftBar";
-export { LeftBar };
+import AIChatAssistant from "./AIChatAssistant";
+export { LeftBar, AIChatAssistant };
