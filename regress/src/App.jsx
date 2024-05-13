@@ -3,14 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { LeftBar } from "./components";
 import { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
+
+const [LoginLogout, setLoginLogout] = useState(false);
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <LeftBar />
+        {LoginLogout && <LeftBar />}
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage setLoginLogout={setLoginLogout} />} />
           <Route path="/user/auth/:id" element={<></>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/schedule" element={<SchedulePage />} />

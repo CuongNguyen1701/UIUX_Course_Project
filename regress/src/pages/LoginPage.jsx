@@ -3,7 +3,9 @@ import logo from '../assets/react.svg'
 import regress from '../assets/regress.svg'
 
 
-const LoginPage = () => {
+const LoginPage = ({ setLoginLogout }) => {
+    setLoginLogout(true)
+    console.log(setLoginLogout)
     return (
         <div className='h-screen w-screen flex'>
             <div className="w-5/12 bg-secondary">Logo here
