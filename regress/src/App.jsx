@@ -1,15 +1,21 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { LeftBar } from "./components";
-import { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
-
+import { LeftBar, AIChatAssistant } from "./components";
+import {
+  LoginPage,
+  HomePage,
+  ProjectPage,
+  SchedulePage,
+  PredictionsPage,
+} from "./pages";
 const App = () => {
-  const [LoginLogout, setLoginLogout] = useState(false);
+  const [LoginLogout, setLoginLogout] = useState(true);
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-secondary-100">
-        {LoginLogout ? null : <LeftBar />}
+      <div className="relative z-0">
+        {LoginLogout && <LeftBar />}
+        {LoginLogout && <AIChatAssistant />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage setLoginLogout={setLoginLogout} />} />
