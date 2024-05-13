@@ -6,7 +6,7 @@ const NavButton = ({ name, dest }) => {
   return (
     <li>
       <Link to={dest}>
-        <div className="text-black-100">
+        <div className="p-5 font-bold rounded-xl text-black-100 hover:bg-primary">
           {name}
         </div>
       </Link>
@@ -21,7 +21,7 @@ const LeftBar = () => {
         alt="Regress Logo"
         className="flex self-center w-20 h-20"
       />
-      <nav className="flex flex-col justify-between h-full pt-10 text-black-100">
+      <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="text-left">
             <NavButton name="Trang chủ" dest="/" />
