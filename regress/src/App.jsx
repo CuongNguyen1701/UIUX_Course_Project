@@ -1,13 +1,20 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { LeftBar } from "./components";
-import { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
+import { LeftBar, AIChatAssistant } from "./components";
+import {
+  LoginPage,
+  HomePage,
+  ProjectPage,
+  SchedulePage,
+  PredictionsPage,
+} from "./pages";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0">
         <LeftBar />
+        <AIChatAssistant />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
