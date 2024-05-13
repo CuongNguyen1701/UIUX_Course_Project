@@ -1,9 +1,13 @@
 import React from 'react'
+import { LeftBar } from '../components'
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <div>
+      <LeftBar />
       <h2>Trang chủ</h2>
     </div>
   )
 }
+
+export default HomePage

@@ -1,2 +1,2 @@
-import { LeftBar } from "./LeftBar";
+import LeftBar from "./LeftBar";
 export { LeftBar };
