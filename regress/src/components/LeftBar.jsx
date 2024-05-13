@@ -2,32 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/react.svg";
 import avatar from "../assets/avatar.png";
-
+const NavButton = ({ name, dest }) => {
+  return (
+    <li>
+      <Link to={dest}>
+        <div className="text-black-100">
+          {name}
+        </div>
+      </Link>
+    </li>
+  );
+};
 const LeftBar = () => {
   return (
-    <aside className="fixed top-0 left-0 flex flex-col h-screen pt-10 pl-5 text-black-100 bg-white-100 w-fit left-bar">
-      <div className="items-center">
-        <img
-          src={logo}
-          alt="Regress Logo"
-          className="flex w-4/5 h-4/5 justify-items-center"
-        />
-      </div>
-      <nav className="flex flex-col justify-between">
-        <div className="relative inset-y-0 left-0">
+    <aside className="fixed top-0 left-0 flex flex-col h-screen px-10 py-5 bg-white-100 w-fit left-bar">
+      <img
+        src={logo}
+        alt="Regress Logo"
+        className="flex self-center w-20 h-20"
+      />
+      <nav className="flex flex-col justify-between h-full pt-10 text-black-100">
+        <div className="relative left-0">
           <ul className="text-left">
-            <li>
-              <Link to="/">Trang chủ</Link>
-            </li>
-            <li>
-              <Link to="/projects">Dự án</Link>
-            </li>
-            <li>
-              <Link to="/schedule">Thời gian biểu</Link>
-            </li>
-            <li>
-              <Link to="/predictions">Dự đoán</Link>
-            </li>
+            <NavButton name="Trang chủ" dest="/" />
+            <NavButton name="Dự án" dest="/projects" />
+            <NavButton name="Thời gian biểu" dest="/schedule" />
+            <NavButton name="Dự đoán" dest="/predictions" />
           </ul>
         </div>
         <ul>
