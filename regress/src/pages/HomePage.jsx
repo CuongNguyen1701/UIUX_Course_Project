@@ -3,8 +3,7 @@ import { LeftBar } from '../components'
 
 const HomePage = () => {
   return (
-    <div>
-      <LeftBar />
+    <div >
       <h2>Trang chủ</h2>
     </div>
   )
