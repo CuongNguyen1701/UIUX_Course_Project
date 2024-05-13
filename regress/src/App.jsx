@@ -2,14 +2,14 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { LeftBar } from "./components";
-import { HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
+import { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<></>} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/user/auth/:id" element={<></>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/schedule" element={<SchedulePage />} />

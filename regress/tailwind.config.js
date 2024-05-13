@@ -4,15 +4,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "##194DD3",
-        secondary: "##4219D3",
-        tertiary: "##19AAD3",
+        primary: "#194DD3",
+        secondary: "#8C7FF8",
+        tertiary: "#19AAD3",
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
       screens: {
-        xs: "450px",
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+
+        'md': '768px',
+        // => @media (min-width: 768px) { ... }
+
+        'lg': '1024px',
+        // => @media (min-width: 1024px) { ... }
+
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
       },
     },
     plugins: [],
