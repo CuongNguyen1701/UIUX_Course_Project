@@ -1,12 +1,19 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import avatar from "../assets/avatar.png";
-const NavButton = ({ name, dest }) => {
+import { useLocation } from "react-router-dom";
+const NavButton = ({ name, dest, current_loc }) => {
   return (
     <li>
       <Link to={dest}>
-        <div className="py-3 pl-2 pr-10 text-3xl rounded-xl text-black-100 hover:bg-primary-200">
+        <div
+          className={`py-3 pl-2 pr-10 text-3xl rounded-xl text-black-100 hover:bg-primary-100 ${
+            current_loc.pathname == dest
+              ? "bg-primary-200 hover:bg-primary-200"
+              : ""
+          }`}
+        >
           {name}
         </div>
       </Link>
@@ -14,6 +21,10 @@ const NavButton = ({ name, dest }) => {
   );
 };
 const LeftBar = () => {
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
   return (
     <aside className="fixed top-0 left-0 flex flex-col h-screen px-10 py-5 bg-white w-fit left-bar">
       <Link to="/" className="flex self-center w-24 h-24">
@@ -22,10 +33,19 @@ const LeftBar = () => {
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="flex flex-col gap-1 text-left">
-            <NavButton name="Trang chủ" dest="/" />
-            <NavButton name="Thời gian biểu" dest="/schedule" />
-            <NavButton name="Dự án" dest="/projects" />
-            <NavButton name="Dự đoán" dest="/predictions" />
+            {}
+            <NavButton name="Trang chủ" dest="/" current_loc={location} />
+            <NavButton
+              name="Thời gian biểu"
+              dest="/schedule"
+              current_loc={location}
+            />
+            <NavButton name="Dự án" dest="/projects" current_loc={location} />
+            <NavButton
+              name="Dự đoán"
+              dest="/predictions"
+              current_loc={location}
+            />
           </ul>
         </div>
         <Link
