@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { LeftBar } from "./components";
 import { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage } from "./pages";
 
-const [LoginLogout, setLoginLogout] = useState(false);
 const App = () => {
+  const [LoginLogout, setLoginLogout] = useState(false);
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        {LoginLogout && <LeftBar />}
+      <div className="relative z-0 bg-secondary-100">
+        {LoginLogout ? null : <LeftBar />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage setLoginLogout={setLoginLogout} />} />
