@@ -8,21 +8,20 @@ import {
   ProjectPage,
   SchedulePage,
   PredictionsPage,
+  SignupPage,
 } from "./pages";
 const App = () => {
-  const [LoginLogout, setLoginLogout] = useState(true);
+  const [Logined, setLogin] = useState(false);
+  console.log(Logined);
   return (
     <BrowserRouter>
       <div className="relative z-0">
-        {LoginLogout && <LeftBar />}
-        {LoginLogout && <AIChatAssistant />}
+        {Logined ? <div></div> : <LeftBar />}
+        {!Logined && <AIChatAssistant />}
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/login"
-            element={<LoginPage setLoginLogout={setLoginLogout} />}
-          />
-          <Route path="/signup" element={<></>} />
+          <Route path="/login" element={<LoginPage setLoginLogout={setLogin} />} />
+          <Route path="/signup" element={<SignupPage setLoginLogout={setLogin} />} />
           <Route path="/user/auth/:id" element={<></>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
