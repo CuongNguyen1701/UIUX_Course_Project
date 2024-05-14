@@ -4,4 +4,5 @@ import InputField from "./InputField";
 import GoogleButton from "./Buttons/GoogleButton";
 import FacebookButton from "./Buttons/FacebookButton";
 import SuccessPopUp from "./SuccessPopUp";
-export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp };
+import ScheduleBoard from "./ScheduleBoard";
+export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard };
