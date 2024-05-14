@@ -34,6 +34,19 @@ export default {
         // => @media (min-width: 1536px) { ... }
       },
     },
-    plugins: [],
+    plugins: [
+      ({ addUtilities }) => {
+        const newUtilities = {
+          ".no-scrollbar": {
+            "scrollbar-width": "none",
+            "-ms-overflow-style": "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          },
+        };
+        addUtilities(newUtilities);
+      },
+    ],
   },
 };

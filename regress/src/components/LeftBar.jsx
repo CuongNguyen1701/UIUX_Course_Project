@@ -8,10 +8,11 @@ const NavButton = ({ name, dest, current_loc }) => {
     <li>
       <Link to={dest}>
         <div
-          className={`py-3 pl-2 pr-10 text-3xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest
+          className={`py-3 pl-2 pr-10 text-3xl rounded-xl text-black-100 hover:bg-primary-100 ${
+            current_loc.pathname == dest
               ? "bg-primary-200 hover:bg-primary-200"
               : ""
-            }`}
+          }`}
         >
           {name}
         </div>
@@ -32,7 +33,7 @@ const LeftBar = () => {
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="flex flex-col gap-2 text-left">
-            { }
+            {}
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
             <NavButton
               name="Thời gian biểu"
@@ -51,7 +52,7 @@ const LeftBar = () => {
           to="/personal"
           className="flex flex-row items-center self-center pr-5 text-black rounded-full w-fit h-fit bg-secondary-100"
         >
-          <img src={avatar} className="size-20"></img>
+          <img src={avatar} className="m-2 rounded-full size-20"></img>
           Kuan Min LEE
         </Link>
         {/* <li>
