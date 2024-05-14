@@ -4,9 +4,9 @@ import logo from "../assets/react.svg";
 function AIChatAssistant() {
   const [isDragging, setIsDragging] = useState(false);
   return (
-    <Draggable className="absolute z-20" defaultPosition={{ x: 100, y: 0 }}>
-      <div className="relative">
-        <span className="absolute top-0 left-0 z-20 w-full h-full hover:cursor-pointer "></span>
+    <Draggable bounds="body" defaultPosition={{ x: 100, y: 0 }}>
+      <div className="fixed z-10 bottom-10 right-40">
+        <span className="absolute top-0 left-0 z-20 w-full h-full select-none hover:cursor-pointer"></span>
         <img
           src={logo}
           alt="Regress Logo"
