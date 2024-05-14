@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react'
 import logo from '../assets/react.svg'
 import regress from '../assets/regress.svg'
 import { Link } from "react-router-dom";
-import { GoogleButton, FacebookButton, InputField } from '../components'
+import { GoogleButton, FacebookButton, InputField, SuccessPopUp } from '../components'
+import { Route } from "react-router-dom";
 
-const LoginPage = ({ setLoginLogout }) => {
+
+const SignupPage = ({ setLoginLogout }) => {
     setLoginLogout(true)
     const [isRememberPassword, setRememberPassword] = useState(false);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
     const handleCheckboxChange = () => {
         setRememberPassword(!isRememberPassword); // Đảo ngược trạng thái của checkbox
     };
@@ -24,9 +28,13 @@ const LoginPage = ({ setLoginLogout }) => {
         }
     }
 
-    const handleLoginClick = () => {
+    const handleSignupClick = () => {
         setLoginLogout(true)
-        return (window.location.href = "/")
+        setShowSuccessMessage(true);
+
+        setTimeout(() => {
+            window.location.href = "/login";
+        }, 3000);
     }
 
     return (
@@ -34,26 +42,27 @@ const LoginPage = ({ setLoginLogout }) => {
             <div className="w-5/12 bg-secondary-100 flex justify-center items-center">
                 <img src={regress} alt="Regress Logo" className="w-96 h-96" />
             </div>
-            <div className="w-7/12 flex justify-center items-center bg-white">
-                <div className="flex-col rounded-lg justify-center">
-                    <div className="flex justify-start items-center">
-                        <h1 className="text-5xl text-gray-700 mb-20">Chào mừng đã quay trở lại!</h1>
-                    </div>
+            <div className="w-7/12 pt-10 flex-col justify-center items-center bg-white">
+                <div className="flex justify-center items-center">
+                    <h1 className="text-6xl text-gray-700 mb-10">Đăng ký tài khoản mới</h1>
+                </div>
+                <div className="pl-24 pr-24  flex-col rounded-lg justify-center">
                     <div className='flex-col justify-start'>
+                        <InputField label='Họ và tên' type='text' placeholder='Họ và tên' />
                         <InputField label='Email' type='email' placeholder='Email' />
-                        <InputField label='Mật khẩu' type='password' placeholder='Mật khẩu' />
+                        <InputField label='Mật khẩu (mật khẩu cần ít nhất 8 ký tự)' type='password' placeholder='Mật khẩu' />
+                        <InputField label='Nhập lại mật khẩu' type='password' placeholder='Nhập lại mật khẩu' />
                         <div className='flex pb-7'>
                             <input type="checkbox" checked={isRememberPassword} onChange={handleCheckboxChange} className="checked:bg-secondary-100 transition duration-150 ease-in-out" />
-                            <label className="pl-2 text-gray-700">Ghi nhớ mật khẩu</label>
+                            <label className="pl-2 text-gray-700">Tôi đồng ý với</label>
+                            <Link to="/terms_of_service" className='text-gray-700 pl-1 underline'>Điều khoản và chính sách</Link>
                         </div>
-                        <button type="submit" onClick={handleLoginClick} className="w-full bg-secondary-300 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mb-5">Đăng nhập</button>
-                    </div>
-                    <div className='flex justify-end text-gray-700 text-l mb-4'>
-                        <Link to="/for_got_password">Bạn quên mật khẩu?</Link>
+                        <button type="submit" onClick={handleSignupClick} className="w-full bg-secondary-300 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mb-5">Đăng ký</button>
+                        {showSuccessMessage && <SuccessPopUp message="Đăng nhập thành công!" />}
                     </div>
                     <div className='flex justify-center pb-5'>
-                        <div className='text-gray-700 text-xl pr-2'>Chưa có tài khoản? </div>
-                        <Link to="/signup" className=' text-gray-700 text-xl underline '> Đăng ký ngay</Link>
+                        <div className='text-gray-700 text-xl pr-2'>Đã có có tài khoản? </div>
+                        <Link to="/signup" className=' text-gray-700 text-xl underline '> Đăng nhập tại đây</Link>
                     </div>
 
                     <div className='text-gray-700 text-xl pb-5'>--- Hoặc ---</div>
@@ -67,4 +76,4 @@ const LoginPage = ({ setLoginLogout }) => {
     );
 }
 
-export default LoginPage
+export default SignupPage
