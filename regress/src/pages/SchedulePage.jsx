@@ -1,12 +1,11 @@
 import React from "react";
-import { LeftBar } from "../components";
+import { ScheduleBoard } from "../components";
 
 const SchedulePage = () => {
     return (
-        <>
-            <LeftBar />
-            <h2>Lịch trình</h2>
-        </>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <ScheduleBoard />
+        </div>
     );
 }
 
