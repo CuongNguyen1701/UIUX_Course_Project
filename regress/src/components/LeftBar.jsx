@@ -50,7 +50,7 @@ const LeftBar = () => {
         </div>
         <Link
           to="/personal"
-          className="flex flex-row items-center self-center pr-5 text-black rounded-full w-fit h-fit bg-secondary-100"
+          className="flex flex-row items-center self-center pr-5 text-black rounded-full w-fit h-fit bg-secondary-100 lg:text-sm xl:text-md 2xl:text-lg hover:bg-secondary-200 hover:text-white-100"
         >
           <img
             src={avatar}
