@@ -24,7 +24,7 @@ const LeftBar = () => {
     console.log(location);
   }, [location]);
   return (
-    <aside className="fixed top-0 left-0 z-20 flex flex-col w-1/5 h-screen px-10 py-20 bg-white left-bar">
+    <aside className="fixed top-0 left-0 border-r-2 border-gray-200 z-20 flex flex-col w-1/5 h-screen px-10 py-20 bg-white left-bar">
       <Link to="/" className="flex self-center w-24 h-24">
         <img src={logo} alt="Regress Logo" />
       </Link>

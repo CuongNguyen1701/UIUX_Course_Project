@@ -104,7 +104,7 @@ export default function DateCalendarServerRequest() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar className="text-black"
+      <DateCalendar className="text-black rounded-2 rounded-xl border border-gray-400"
         defaultValue={initialValue}
         loading={isLoading}
         onMonthChange={handleMonthChange}
