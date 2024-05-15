@@ -10,18 +10,16 @@ import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { YearCalendar } from '@mui/x-date-pickers/YearCalendar';
 
-const localizer = momentLocalizer(moment)
-
-const events = [{ title: "Meeting", start: new Date() }];
-
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
 import Badge from '@mui/material/Badge';
 
-function getRandomNumber(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
+import red_circle from '../assets/red_circle.png';
+
+// function getRandomNumber(min, max) {
+//   return Math.round(Math.random() * (max - min) + min);
+// }
 
 /**
  * Mimic fetch with abort controller https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort
@@ -31,7 +29,7 @@ function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       const daysInMonth = date.daysInMonth();
-      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth));
+      const daysToHighlight = [16, 4, 3];
 
       resolve({ daysToHighlight });
     }, 500);
@@ -43,7 +41,7 @@ function fakeFetch(date, { signal }) {
   });
 }
 
-const initialValue = dayjs('2022-04-17');
+const initialValue = dayjs();
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
@@ -55,7 +53,7 @@ function ServerDay(props) {
     <Badge
       key={props.day.toString()}
       overlap="circular"
-      badgeContent={isSelected ? '🌚' : undefined}
+      badgeContent={isSelected ? '🔴' : undefined}
     >
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
@@ -106,7 +104,7 @@ export default function DateCalendarServerRequest() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar
+      <DateCalendar className="text-black"
         defaultValue={initialValue}
         loading={isLoading}
         onMonthChange={handleMonthChange}

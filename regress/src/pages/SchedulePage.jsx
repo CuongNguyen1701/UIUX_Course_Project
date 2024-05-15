@@ -5,7 +5,7 @@ const SchedulePage = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
             <Tittle title="Thời gian biểu" />
-            <ScheduleBoard />
+            {/* <ScheduleBoard /> */}
         </div>
     );
 }
