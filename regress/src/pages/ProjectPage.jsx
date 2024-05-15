@@ -1,10 +1,10 @@
 import React from "react";
-import { LeftBar, Tittle, ScheduleBoard, LineChart } from "../components";
+import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
 
 const ProjectPage = () => {
     return (
         <div>
-            {/* <Tittle title="Dự án" /> */}
+            {/* <Title title="Dự án" /> */}
             <LineChart />
         </div>
     );

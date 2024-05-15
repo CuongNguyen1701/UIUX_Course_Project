@@ -4,4 +4,5 @@ import SchedulePage from "./SchedulePage"
 import PredictionsPage from "./PredictionsPage"
 import LoginPage from "./LoginPage"
 import SignupPage from "./SignupPage"
-export { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage, SignupPage }
+import ProjectDetails from "./ProjectDetails"
+export { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage, SignupPage, ProjectDetails }
