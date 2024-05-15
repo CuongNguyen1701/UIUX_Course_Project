@@ -11,13 +11,13 @@ import {
   SignupPage,
 } from "./pages";
 const App = () => {
-  const [Logined, setLogin] = useState(false);
+  const [Logined, setLogin] = useState(true);
   console.log(Logined);
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-white">
-        {Logined ? <div></div> : <LeftBar />}
-        {!Logined && <AIChatAssistant />}
+        {Logined && <LeftBar />}
+        {Logined && <AIChatAssistant />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
