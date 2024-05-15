@@ -1,10 +1,10 @@
 import React from 'react'
-import { LeftBar, ScheduleBoard } from '../components'
+import { LeftBar, ScheduleBoard, Tittle } from '../components'
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2>Trang chủ</h2>
+    <div className="relative flex flex-col items-center justify-center min-h-screen min-w-screen">
+      <Tittle title="Trang chủ" />
       <ScheduleBoard />
     </div>
   )
