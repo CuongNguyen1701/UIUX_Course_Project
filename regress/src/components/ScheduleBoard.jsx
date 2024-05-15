@@ -1,6 +1,12 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
+
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+
+const localizer = momentLocalizer(moment)
 
 const events = [{ title: "Meeting", start: new Date() }];
 
@@ -16,9 +22,11 @@ function renderEventContent(eventInfo) {
 
 const ScheduleBoard = () => {
   return (
-    <div className="flex items-center justify-center size-1/2">
+    <div className="flex items-center justify-center">
       <FullCalendar
-        height={"auto"}
+        height={600}
+        // contentHeight={'auto'}
+        aspectRatio={3}
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         weekends={true}
@@ -28,5 +36,19 @@ const ScheduleBoard = () => {
     </div>
   );
 };
+
+// const ScheduleBoard = () => {
+//   return (
+//     <div>
+//       <Calendar
+//         localizer={localizer}
+//         // events={myEventsList}
+//         startAccessor="start"
+//         endAccessor="end"
+//         style={{ height: 500 }}
+//       />
+//     </div>
+//   )
+// }
 
 export default ScheduleBoard;
