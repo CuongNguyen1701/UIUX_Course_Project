@@ -15,13 +15,19 @@ const App = () => {
   console.log(Logined);
   return (
     <BrowserRouter>
-      <div className="relative z-0">
+      <div className="relative z-0 bg-white">
         {Logined ? <div></div> : <LeftBar />}
         {!Logined && <AIChatAssistant />}
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage setLoginLogout={setLogin} />} />
-          <Route path="/signup" element={<SignupPage setLoginLogout={setLogin} />} />
+          <Route
+            path="/login"
+            element={<LoginPage setLoginLogout={setLogin} />}
+          />
+          <Route
+            path="/signup"
+            element={<SignupPage setLoginLogout={setLogin} />}
+          />
           <Route path="/user/auth/:id" element={<></>} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/schedule" element={<SchedulePage />} />

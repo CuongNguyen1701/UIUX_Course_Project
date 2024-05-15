@@ -8,11 +8,10 @@ const NavButton = ({ name, dest, current_loc }) => {
     <li>
       <Link to={dest}>
         <div
-          className={`py-3 pl-2 pr-10 sm:text-md md:text-l xl:text-2xl 2xl:text-3xl rounded-xl text-black-100 hover:bg-primary-100 ${
-            current_loc.pathname == dest
+          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-xl 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest
               ? "bg-primary-200 hover:bg-primary-200"
               : ""
-          }`}
+            }`}
         >
           {name}
         </div>
@@ -26,14 +25,14 @@ const LeftBar = () => {
     console.log(location);
   }, [location]);
   return (
-    <aside className="fixed top-0 left-0 flex flex-col w-1/6 h-screen px-10 py-20 bg-white left-bar">
+    <aside className="fixed top-0 left-0 flex flex-col w-1/5 h-screen px-10 py-20 bg-white left-bar">
       <Link to="/" className="flex self-center w-24 h-24">
         <img src={logo} alt="Regress Logo" />
       </Link>
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="flex flex-col gap-2 text-left">
-            {}
+            { }
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
             <NavButton
               name="Thời gian biểu"
@@ -54,7 +53,7 @@ const LeftBar = () => {
         >
           <img
             src={avatar}
-            className="m-2 rounded-full size-20 md:size-12 lg:size-14 xl:size-16 2xl:size-20"
+            className="m-1 rounded-full size-20 md:size-12 lg:size-14 xl:size-16 2xl:size-20"
           ></img>
           Kuan Min LEE
         </Link>
