@@ -15,7 +15,7 @@ const App = () => {
   console.log(Logined);
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-white">
+      <div className="relative z-0 bg-wite">
         {Logined && <LeftBar />}
         {Logined && <AIChatAssistant />}
         <Routes>
