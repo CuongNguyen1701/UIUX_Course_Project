@@ -79,8 +79,9 @@ const ProjectPage = () => {
         <div className="grid grid-cols-2 mt-32 ml-16 mr-32">
           <LineChart width={"10%"} height={"320px"} />
           <div className="left-0 flex flex-col py-3">
-            <div className="left-2">
+            <div className="flex flex-row justify-between px-3 left-2">
               <div className="text-2xl font-semibold text-gray-700">Gợi ý</div>
+              <Link to="all">Xem tất cả</Link>
             </div>
             <div className="relative grid-flow-row grid-cols-2">
               {projects.map((project) => (
