@@ -5,9 +5,9 @@ const HomePage = () => {
   return (
     <div className="relative flex flex-col items-center justify-center h-screen w-screen bg-white">
       <Title title="Trang chủ" />
-      {/* <div>
-        <LineChart width={"100%"} height={"300px"} />
-      </div> */}
+      <div className='pt-20'>
+        <LineChart width={"100%"} height={"250px"} />
+      </div>
       <ScheduleBoard />
     </div>
   )

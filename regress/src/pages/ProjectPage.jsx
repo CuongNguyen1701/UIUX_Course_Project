@@ -23,14 +23,12 @@ const RecommendCard = ({ title, description, tag, process }) => {
     processWidth = "w-44";
   } else if (process < 100) {
     processColor = "bg-green-600";
-    processWidth = "w-52";
+    processWidth = "w-48";
   } else {
     processColor = "bg-green-600";
     processWidth = "w-56";
   }
 
-  console.log(processColor);
-  console.log(tagColor);
   return (
     <div className="inline-flex flex-col items-center justify-start m-2 border rounded-md w-fit h-fit group border-black/opacity-10 hover:cursor-pointer">
       <div className="inline-flex items-start self-stretch justify-start h-40">
@@ -48,7 +46,7 @@ const RecommendCard = ({ title, description, tag, process }) => {
         </div>
       </div>
       <div className="flex flex-col items-start self-stretch justify-start w-56 h-20 gap-1 p-2 group-hover:bg-gray-50">
-        <div className="text-black text-xs font-normal font-['Roboto'] leading-none">
+        <div className="text-black min-h-6 text-xs font-normal font-['Roboto'] leading-none">
           {description}
         </div>
         <div className="self-stretch text-black text-base font-medium font-['Roboto'] leading-normal">
@@ -72,7 +70,7 @@ const ProjectPage = () => {
       <div className="flex flex-col ml-80 left-1/4">
         <div className="grid grid-cols-2 mt-32 ml-16 mr-32">
           <LineChart width={"10%"} height={"320px"} />
-          <div className="left-0 flex flex-col py-3">
+          <div className="left-0 flex flex-col">
             <div className="left-2">
               <div className="text-2xl font-semibold text-gray-700">Gợi ý</div>
             </div>
@@ -101,6 +99,9 @@ const ProjectPage = () => {
                 tag="Nên làm"
                 process="60"
               />
+            </div>
+            <div className="p-4">
+              <button className="w-full bg-primary-200 text-gray-700 hover:bg-primary-300">Xem thêm</button>
             </div>
           </div>
         </div>

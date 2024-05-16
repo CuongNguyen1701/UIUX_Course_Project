@@ -8,7 +8,7 @@ const NavButton = ({ name, dest, current_loc }) => {
     <li>
       <Link to={dest}>
         <div
-          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-l 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest &&
+          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-2xl 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest &&
             "bg-primary-200 hover:bg-primary-200"
             }`}
         >
