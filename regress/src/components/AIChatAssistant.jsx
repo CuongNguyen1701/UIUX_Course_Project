@@ -79,7 +79,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
     {
       message: "Sắp tới có những deadlines nào?",
       response:
-        "Tuần sau bạn có những deadlines sau(sắp xếp theo độ ưu tiên từ cao đến thấp):\n- Hoàn thành mẫu thử độ tin cậy cao cho môn UIUX \n- Hoàn thành bài tập lớn cho môn ITSS \n- Xây dựng mô hình AI cho môn Học máy \n",
+        "Tuần sau bạn có những deadlines sau (sắp xếp theo độ ưu tiên từ cao đến thấp):\n- Hoàn thành mẫu thử độ tin cậy cao cho môn UIUX \n- Hoàn thành bài tập lớn cho môn ITSS \n- Xây dựng mô hình AI cho môn Học máy \n",
     },
   ];
   return (
@@ -139,7 +139,7 @@ const AIChatAssistant = () => {
   };
   return (
     <Draggable bounds="body" defaultPosition={{ x: 100, y: 0 }}>
-      <div className="fixed z-10 flex flex-row m-10 bottom-10 right-40 cursor-none">
+      <div className="fixed z-10 flex flex-row m-10 bottom-10 right-40">
         {chatOpen && <ChatScreen chatLog={chatLog} insertChat={insertChat} />}
         <div className="select-none">
           <span

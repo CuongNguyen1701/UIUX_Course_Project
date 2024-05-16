@@ -67,10 +67,10 @@ const RecommendCard = ({ title, description, tag, process }) => {
   console.log(processColor);
   console.log(tagColor);
   return (
-    <div className="inline-flex flex-col items-center justify-start w-64 h-64 mr-3 border rounded-md group border-black/opacity-10">
+    <div className="inline-flex flex-col items-center justify-start m-2 border rounded-md w-fit h-fit group border-black/opacity-10 hover:cursor-pointer">
       <div className="inline-flex items-start self-stretch justify-start h-40">
-        <div className="relative w-64 h-40 bg-gray-100 group-hover:bg-primary-100">
-          <div className="w-60 h-4 left-[16px] top-[74px] absolute text-center text-black text-2xl font-normal font-['Roboto'] leading-none">
+        <div className="relative w-56 h-40 bg-gray-100 group-hover:bg-primary-100">
+          <div className="h-full w-full flex flex-row items-center justify-center text-center text-black text-2xl font-normal font-['Roboto'] leading-none">
             {title}
           </div>
           <div
@@ -82,15 +82,15 @@ const RecommendCard = ({ title, description, tag, process }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start self-stretch justify-start h-24 gap-1 p-2 group-hover:bg-gray-50">
+      <div className="flex flex-col items-start self-stretch justify-start w-56 h-20 gap-1 p-2 group-hover:bg-gray-50">
         <div className="text-black text-xs font-normal font-['Roboto'] leading-none">
           {description}
         </div>
         <div className="self-stretch text-black text-base font-medium font-['Roboto'] leading-normal">
           Tiến độ: {process}%
         </div>
-        <div className="w-64 h-2.5 relative">
-          <div className="w-56 h-2.5 left-0 top-0 absolute bg-white rounded-lg shadow border border-black" />
+        <div className="w-full h-2.5 relative">
+          <div className="w-full h-2.5 left-0 top-0 absolute bg-white rounded-lg shadow border border-black" />
           <div
             className={`${processWidth} h-2.5 left-0 top-0 absolute ${processColor} rounded-tl-lg rounded-bl-lg border border-black`}
           />
@@ -102,33 +102,34 @@ const RecommendCard = ({ title, description, tag, process }) => {
 
 export default function LineChart({ width, height }) {
   return (
-    <div className="mt-32 ml-16 mr-32">
-      <div className="p-5 border-2 border-gray-200 rounded-xl">
-        <Chart
-          chartType="Line"
-          width={width}
-          height={height}
-          data={data}
-          options={options}
-        />
-      </div>
-
-      <div className="left-0 flex py-3">
-        <div className="p-3 mr-2 border-2 border-gray-100 rounded-xl">
-          <div className="text-gray-400">Số dự án đã hoàn thành</div>
-          <div className="text-gray-700">{completedProjects}</div>
+    <div className="grid grid-cols-2 mt-32 ml-16 mr-32">
+      <div className="">
+        <div className="p-5 border-2 border-gray-200 rounded-xl">
+          <Chart
+            chartType="Line"
+            data={data}
+            options={options}
+            height={height}
+          />
         </div>
-        <div className="p-3 border-2 border-gray-100 rounded-xl">
-          <div className="text-gray-400">Tiến độ chung</div>
-          <div className="text-gray-700">{completedProjectsPercentage}</div>
+
+        <div className="left-0 flex py-3">
+          <div className="p-3 mr-2 border-2 border-gray-100 rounded-xl">
+            <div className="text-gray-400">Số dự án đã hoàn thành</div>
+            <div className="text-gray-700">{completedProjects}</div>
+          </div>
+          <div className="p-3 border-2 border-gray-100 rounded-xl">
+            <div className="text-gray-400">Tiến độ chung</div>
+            <div className="text-gray-700">{completedProjectsPercentage}</div>
+          </div>
         </div>
       </div>
 
       <div className="left-0 flex flex-col py-3">
         <div className="left-2">
-          <div className="pb-8 text-gray-700">Gợi ý</div>
+          <div className="text-2xl font-semibold text-gray-700">Gợi ý</div>
         </div>
-        <div className="relative flex">
+        <div className="relative grid-flow-row grid-cols-2">
           <RecommendCard
             title="UIUX"
             description="Hanoi University of Science and Technology"
