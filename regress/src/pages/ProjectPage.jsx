@@ -5,9 +5,15 @@ const ProjectPage = () => {
     return (
         <div className="relative flex flex-col items-center justify-center h-screen w-screen bg-white">
             <Tittle title="Dự án" />
-            <div className="absolute left-1/4">
-
-                <LineChart width={"150%"} height={"500px"} />
+            <div className="absolute left-1/4 flex items-center justify-center">
+                <div className="w-10/12">
+                    <LineChart width={"100%"} height={"300px"} />
+                </div>
+                <div className="pl-32 w-2/12 h-full flex flex-col items-center justify-center">
+                    <button className="m-2 bg-green-400 w-44">Thêm dự án</button>
+                    <button className="m-2 bg-red-400 w-44">Xoá dự án</button>
+                    <button className="m-2 bg-yellow-400 w-44">Cập nhật dự án</button>
+                </div>
             </div>
         </div>
     );

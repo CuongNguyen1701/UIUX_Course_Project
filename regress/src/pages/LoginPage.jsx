@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { GoogleButton, FacebookButton, InputField } from '../components'
 
 const LoginPage = ({ setLoginLogout }) => {
-    setLoginLogout(true)
+    setLoginLogout(false)
     const [isRememberPassword, setRememberPassword] = useState(false);
     const handleCheckboxChange = () => {
         setRememberPassword(!isRememberPassword); // Đảo ngược trạng thái của checkbox

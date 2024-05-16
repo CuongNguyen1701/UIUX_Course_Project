@@ -7,9 +7,11 @@ import { Route } from "react-router-dom";
 
 
 const SignupPage = ({ setLoginLogout }) => {
-    setLoginLogout(true)
+    setLoginLogout(false)
+
     const [isRememberPassword, setRememberPassword] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [hideBG, setHideBG] = useState(false);
 
     const handleCheckboxChange = () => {
         setRememberPassword(!isRememberPassword); // Đảo ngược trạng thái của checkbox
@@ -29,8 +31,8 @@ const SignupPage = ({ setLoginLogout }) => {
     }
 
     const handleSignupClick = () => {
-        setLoginLogout(true)
         setShowSuccessMessage(true);
+        setHideBG(true);
 
         setTimeout(() => {
             window.location.href = "/login";
@@ -39,6 +41,9 @@ const SignupPage = ({ setLoginLogout }) => {
 
     return (
         <div className='h-screen w-screen flex'>
+            {hideBG && (
+                <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
+            )}
             <div className="w-5/12 bg-secondary-100 flex justify-center items-center">
                 <img src={regress} alt="Regress Logo" className="w-96 h-96" />
             </div>
@@ -58,7 +63,7 @@ const SignupPage = ({ setLoginLogout }) => {
                             <Link to="/terms_of_service" className='text-gray-700 pl-1 underline'>Điều khoản và chính sách</Link>
                         </div>
                         <button type="submit" onClick={handleSignupClick} className="w-full bg-secondary-300 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mb-5">Đăng ký</button>
-                        {showSuccessMessage && <SuccessPopUp message="Đăng nhập thành công!" />}
+                        {showSuccessMessage && <SuccessPopUp message="Đăng ký thành công!" />}
                     </div>
                     <div className='flex justify-center pb-5'>
                         <div className='text-gray-700 text-xl pr-2'>Đã có có tài khoản? </div>
