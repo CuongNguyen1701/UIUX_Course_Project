@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from "tailwindcss/plugin";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -35,18 +36,19 @@ export default {
       },
     },
     plugins: [
-      ({ addUtilities }) => {
-        const newUtilities = {
+      plugin(({ addUtilities }) => {
+        const scrollUtilities = {
           ".no-scrollbar": {
             "scrollbar-width": "none",
             "-ms-overflow-style": "none",
-            "&::-webkit-scrollbar": {
-              display: "none",
-            },
+          },
+          /* Hide scrollbar for Chrome, Safari and Opera */
+          ".no-scrollbar::-webkit-scrollbar": {
+            display: "none",
           },
         };
-        addUtilities(newUtilities);
-      },
+        addUtilities(scrollUtilities);
+      }),
     ],
   },
 };
