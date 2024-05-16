@@ -8,10 +8,9 @@ const NavButton = ({ name, dest, current_loc }) => {
     <li>
       <Link to={dest}>
         <div
-          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-l 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${
-            current_loc.pathname == dest &&
+          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-l 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest &&
             "bg-primary-200 hover:bg-primary-200"
-          }`}
+            }`}
         >
           {name}
         </div>
@@ -32,12 +31,12 @@ const LeftBar = () => {
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="flex flex-col gap-2 text-left">
-            {}
+            { }
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
             <NavButton name="Dự án" dest="/projects" current_loc={location} />
             <NavButton
-              name="Dự đoán"
-              dest="/predictions"
+              name="KPI"
+              dest="/kpi"
               current_loc={location}
             />
           </ul>

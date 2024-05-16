@@ -1,8 +1,10 @@
 import HomePage from "./HomePage"
 import ProjectPage from "./ProjectPage"
 import SchedulePage from "./SchedulePage"
-import PredictionsPage from "./PredictionsPage"
+import KPIPage from "./KPIPage"
 import LoginPage from "./LoginPage"
 import SignupPage from "./SignupPage"
 import ProjectDetails from "./ProjectDetails"
-export { LoginPage, HomePage, ProjectPage, SchedulePage, PredictionsPage, SignupPage, ProjectDetails }
+import SettingPage from "./SettingPage"
+import PersonalPage from "./PersonalPage"
+export { LoginPage, HomePage, ProjectPage, SchedulePage, KPIPage, SignupPage, ProjectDetails, SettingPage, PersonalPage }
