@@ -7,7 +7,7 @@ import {
   HomePage,
   ProjectPage,
   SchedulePage,
-  PredictionsPage,
+  KPIPage,
   SignupPage,
   ProjectDetails,
   SettingPage,
@@ -38,7 +38,7 @@ const App = () => {
             </Route>
           </Route>
           <Route path="/schedule" element={<SchedulePage />} />
-          <Route path="/predictions" element={<PredictionsPage />} />
+          <Route path="/kpi" element={<KPIPage />} />
           <Route path='/project_detail' element={<ProjectDetails />} />
           <Route path="/personal" element={<PersonalPage />} />
           <Route path="/settings" element={<SettingPage />} />
