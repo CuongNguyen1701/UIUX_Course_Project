@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "UIUX",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Ưu tiên",
+    "process": 90
+  },
+  {
+    "id": 2,
+    "title": "Đồ án",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 40
+  },
+  {
+    "id": 3,
+    "title": "NeuralCV",
+    "description": "BusiTech BootCamp",
+    "tag": "Nên làm",
+    "process": 20
+  },
+  {
+    "id": 4,
+    "title": "Intro AI",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 60
+  }
+]

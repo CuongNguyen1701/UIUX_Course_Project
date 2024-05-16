@@ -1,6 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
-const RecommendCard = ({ title, description, tag, process }) => {
+import projectData from "../data/projects";
+import { Link } from "react-router-dom";
+const RecommendCard = ({ id, title, description, tag, process }) => {
   let tagColor;
   let processColor;
   let processWidth;
@@ -30,7 +32,10 @@ const RecommendCard = ({ title, description, tag, process }) => {
   }
 
   return (
-    <div className="inline-flex flex-col items-center justify-start m-2 border rounded-md w-fit h-fit group border-black/opacity-10 hover:cursor-pointer">
+    <Link
+      to={`${id}`}
+      className="inline-flex flex-col items-center justify-start m-2 border rounded-md w-fit h-fit group border-black/opacity-10 hover:cursor-pointer"
+    >
       <div className="inline-flex items-start self-stretch justify-start h-40">
         <div className="relative w-56 h-40 bg-gray-100 group-hover:bg-primary-100">
           <div className="h-full w-full flex flex-row items-center justify-center text-center text-black text-2xl font-normal font-['Roboto'] leading-none">
@@ -59,49 +64,34 @@ const RecommendCard = ({ title, description, tag, process }) => {
           />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 const ProjectPage = () => {
+  const [projects, setProjects] = useState(projectData);
   return (
     <div className="relative flex flex-col justify-center w-screen min-h-screen bg-white">
       <Title title="Dự án" />
       <div className="flex flex-col ml-80 left-1/4">
         <div className="grid grid-cols-2 mt-32 ml-16 mr-32">
           <LineChart width={"10%"} height={"320px"} />
-          <div className="left-0 flex flex-col">
-            <div className="left-2">
+          <div className="left-0 flex flex-col py-3">
+            <div className="flex flex-row justify-between px-3 left-2">
               <div className="text-2xl font-semibold text-gray-700">Gợi ý</div>
+              <Link to="all">Xem tất cả</Link>
             </div>
             <div className="relative grid-flow-row grid-cols-2">
-              <RecommendCard
-                title="UIUX"
-                description="Hanoi University of Science and Technology"
-                tag="Ưu tiên"
-                process="90"
-              />
-              <RecommendCard
-                title="Giải tích 3"
-                description="Hanoi University of Science and Technology"
-                tag="Nên làm"
-                process="40"
-              />
-              <RecommendCard
-                title="NeuralCV"
-                description="BusiTech BootCamp"
-                tag="Nên làm"
-                process="20"
-              />
-              <RecommendCard
-                title="Intro AI"
-                description="Hanoi University of Science and Technology"
-                tag="Nên làm"
-                process="60"
-              />
-            </div>
-            <div className="p-4">
-              <button className="w-full bg-primary-200 text-gray-700 hover:bg-primary-300">Xem thêm</button>
+              {projects.map((project) => (
+                <RecommendCard
+                  title={project.title}
+                  description={project.description}
+                  tag={project.tag}
+                  process={project.process}
+                  key={project.id}
+                  id={project.id}
+                />
+              ))}
             </div>
           </div>
         </div>
