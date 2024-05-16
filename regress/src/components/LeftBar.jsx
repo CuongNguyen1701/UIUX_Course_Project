@@ -25,8 +25,8 @@ const LeftBar = () => {
     console.log(location);
   }, [location]);
   return (
-    <aside className="fixed top-0 left-0 z-20 flex flex-col w-1/5 h-screen px-10 py-20 bg-white border-r-2 border-gray-200 left-bar">
-      <Link to="/" className="flex self-center w-24 h-24">
+    <aside className="fixed top-0 left-0 z-20 flex flex-col w-1/5 h-screen px-10 py-12 bg-white border-r-2 border-gray-200 left-bar">
+      <Link to="/" className="flex self-center w-20 h-20">
         <img src={logo} alt="Regress Logo" />
       </Link>
       <nav className="flex flex-col justify-between h-full pt-10">
@@ -34,14 +34,7 @@ const LeftBar = () => {
           <ul className="flex flex-col gap-2 text-left">
             {}
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
-
-            {/* <NavButton
-              name="Thời gian biểu"
-              dest="/schedule"
-              current_loc={location} /> */}
-
             <NavButton name="Dự án" dest="/projects" current_loc={location} />
-
             <NavButton
               name="Dự đoán"
               dest="/predictions"

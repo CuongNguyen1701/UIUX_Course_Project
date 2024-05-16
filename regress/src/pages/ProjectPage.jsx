@@ -6,7 +6,7 @@ const ProjectPage = () => {
     <div className="relative flex flex-col justify-center w-screen min-h-screen bg-white">
       <Title title="Dự án" />
       <div className="flex flex-col ml-80 left-1/4">
-        <LineChart width={"90%"} height={"350px"} />
+        <LineChart width={"10%"} height={"320px"} />
       </div>
     </div>
   );
