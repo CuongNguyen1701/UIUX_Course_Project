@@ -5,6 +5,6 @@ import GoogleButton from "./Buttons/GoogleButton";
 import FacebookButton from "./Buttons/FacebookButton";
 import SuccessPopUp from "./SuccessPopUp";
 import ScheduleBoard from "./ScheduleBoard";
-import Tittle from "./Tittle";
+import Title from "./Title";
 import LineChart from "./LineChart";
-export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Tittle, LineChart };
+export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Title, LineChart };

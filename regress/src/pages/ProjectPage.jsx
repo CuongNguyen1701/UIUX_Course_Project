@@ -1,8 +1,9 @@
 import React from "react";
-import { LeftBar, Tittle, ScheduleBoard, LineChart } from "../components";
+import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
 
 const ProjectPage = () => {
     return (
+<<<<<<< HEAD
         <div className="relative flex flex-col items-center justify-center h-screen w-screen bg-white">
             <Tittle title="Dự án" />
             <div className="absolute left-1/4 flex items-center justify-center">
@@ -15,6 +16,11 @@ const ProjectPage = () => {
                     <button className="m-2 bg-yellow-400 w-44">Cập nhật dự án</button>
                 </div>
             </div>
+=======
+        <div>
+            {/* <Title title="Dự án" /> */}
+            <LineChart />
+>>>>>>> refs/remotes/origin/main
         </div>
     );
 }

@@ -32,18 +32,26 @@ const LeftBar = () => {
         <div className="relative left-0">
           <ul className="flex flex-col gap-2 text-left">
             { }
-            <NavButton name="Trang chủ" dest="/" current_loc={location} />
+            <NavButton
+              name="Trang chủ"
+              dest="/"
+              current_loc={location} />
+
             <NavButton
               name="Thời gian biểu"
               dest="/schedule"
-              current_loc={location}
-            />
-            <NavButton name="Dự án" dest="/projects" current_loc={location} />
+              current_loc={location} />
+
+            <NavButton
+              name="Dự án"
+              dest="/projects"
+              current_loc={location} />
+
             <NavButton
               name="Dự đoán"
               dest="/predictions"
-              current_loc={location}
-            />
+              current_loc={location} />
+
           </ul>
         </div>
         <Link
