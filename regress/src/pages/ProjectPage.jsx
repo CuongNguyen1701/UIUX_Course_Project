@@ -2,14 +2,14 @@ import React from "react";
 import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
 
 const ProjectPage = () => {
-    return (
-        <div className="relative flex flex-col justify-center h-screen w-screen bg-white">
-            <Title title="Dự án" />
-            <div className="absolute left-1/4 flex flex-col">
-                <LineChart width={"100%"} height={"350px"} />
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className="relative flex flex-col justify-center w-screen min-h-screen bg-white">
+      <Title title="Dự án" />
+      <div className="flex flex-col ml-80 left-1/4">
+        <LineChart width={"90%"} height={"350px"} />
+      </div>
+    </div>
+  );
+};
 
 export default ProjectPage;
