@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
-
+import projectData from "../data/projects";
 import { Link } from "react-router-dom";
-const RecommendCard = ({ key, title, description, tag, process }) => {
+const RecommendCard = ({ id, title, description, tag, process }) => {
   let tagColor;
   let processColor;
   let processWidth;
@@ -35,7 +35,7 @@ const RecommendCard = ({ key, title, description, tag, process }) => {
   console.log(tagColor);
   return (
     <Link
-      to={`${key}`}
+      to={`${id}`}
       className="inline-flex flex-col items-center justify-start m-2 border rounded-md w-fit h-fit group border-black/opacity-10 hover:cursor-pointer"
     >
       <div className="inline-flex items-start self-stretch justify-start h-40">
@@ -71,36 +71,7 @@ const RecommendCard = ({ key, title, description, tag, process }) => {
 };
 
 const ProjectPage = () => {
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      title: "UIUX",
-      description: "Hanoi University of Science and Technology",
-      tag: "Ưu tiên",
-      process: 90,
-    },
-    {
-      id: 2,
-      title: "Giải tích 3",
-      description: "Hanoi University of Science and Technology",
-      tag: "Nên làm",
-      process: 40,
-    },
-    {
-      id: 3,
-      title: "NeuralCV",
-      description: "BusiTech BootCamp",
-      tag: "Nên làm",
-      process: 20,
-    },
-    {
-      id: 4,
-      title: "Intro AI",
-      description: "Hanoi University of Science and Technology",
-      tag: "Nên làm",
-      process: 60,
-    },
-  ]);
+  const [projects, setProjects] = useState(projectData);
   return (
     <div className="relative flex flex-col justify-center w-screen min-h-screen bg-white">
       <Title title="Dự án" />
@@ -119,6 +90,7 @@ const ProjectPage = () => {
                   tag={project.tag}
                   process={project.process}
                   key={project.id}
+                  id={project.id}
                 />
               ))}
             </div>
