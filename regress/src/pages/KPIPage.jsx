@@ -7,15 +7,19 @@ import service from "../assets/service.png";
 const CategoryBox = ({ title, task_done, task_total, icon }) => {
     const percentage = Math.min((task_done / task_total) * 100, 100);
 
-    let color;
+    let color, rating;
     if (percentage <= 25) {
         color = 'text-red-500';
+        rating = 'Thấp';
     } else if (percentage <= 50) {
         color = 'text-yellow-500';
+        rating = 'Trung bình';
     } else if (percentage <= 75) {
         color = 'text-blue-500';
+        rating = 'Tốt';
     } else {
         color = 'text-green-500';
+        rating = 'Xuất sắc';
     }
 
     return (
@@ -27,6 +31,9 @@ const CategoryBox = ({ title, task_done, task_total, icon }) => {
             <div className="text-sm text-gray-500">
                 <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
             </div>
+            {/* <div className={`${color}`}>
+                {rating}
+            </div> */}
         </div>
     );
 }
@@ -37,7 +44,7 @@ const KPIPage = () => {
     const [categories, setCategories] = useState([
         { title: "Giảng dạy", task_done: 102, task_total: 72, icon: teach },
         { title: "Nghiên cứu", task_done: 60, task_total: 90, icon: research },
-        { title: "Dịch vụ", task_done: 10, task_total: 20, icon: service },
+        { title: "Phục vụ", task_done: 10, task_total: 20, icon: service },
     ]);
     return (
         <div className="relative flex flex-row flex-wrap items-center justify-center w-screen h-screen bg-white">
