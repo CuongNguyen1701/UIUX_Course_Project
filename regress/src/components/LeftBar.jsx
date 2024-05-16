@@ -8,9 +8,10 @@ const NavButton = ({ name, dest, current_loc }) => {
     <li>
       <Link to={dest}>
         <div
-          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-l 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${current_loc.pathname == dest &&
+          className={`py-3 pl-2 pr-10 sm:text-sm md:text-md xl:text-l 2xl:text-2xl rounded-xl text-black-100 hover:bg-primary-100 ${
+            current_loc.pathname == dest &&
             "bg-primary-200 hover:bg-primary-200"
-            }`}
+          }`}
         >
           {name}
         </div>
@@ -24,34 +25,28 @@ const LeftBar = () => {
     console.log(location);
   }, [location]);
   return (
-    <aside className="fixed top-0 left-0 border-r-2 border-gray-200 z-20 flex flex-col w-1/5 h-screen px-10 py-20 bg-white left-bar">
+    <aside className="fixed top-0 left-0 z-20 flex flex-col w-1/5 h-screen px-10 py-20 bg-white border-r-2 border-gray-200 left-bar">
       <Link to="/" className="flex self-center w-24 h-24">
         <img src={logo} alt="Regress Logo" />
       </Link>
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
           <ul className="flex flex-col gap-2 text-left">
-            { }
-            <NavButton
-              name="Trang chủ"
-              dest="/"
-              current_loc={location} />
+            {}
+            <NavButton name="Trang chủ" dest="/" current_loc={location} />
 
-            <NavButton
+            {/* <NavButton
               name="Thời gian biểu"
               dest="/schedule"
-              current_loc={location} />
+              current_loc={location} /> */}
 
-            <NavButton
-              name="Dự án"
-              dest="/projects"
-              current_loc={location} />
+            <NavButton name="Dự án" dest="/projects" current_loc={location} />
 
             <NavButton
               name="Dự đoán"
               dest="/predictions"
-              current_loc={location} />
-
+              current_loc={location}
+            />
           </ul>
         </div>
         <Link
