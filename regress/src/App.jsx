@@ -33,8 +33,8 @@ const App = () => {
           />
           <Route path="/user/auth/:id" element={<></>} />
           <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/projects/all" element={<ProjectList />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/kpi" element={<KPIPage />} />
           <Route path="/project_detail" element={<ProjectDetails />} />
