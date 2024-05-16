@@ -9,13 +9,16 @@ import {
   SchedulePage,
   PredictionsPage,
   SignupPage,
+  ProjectDetails,
+  SettingPage,
+  PersonalPage,
 } from "./pages";
 const App = () => {
   const [Logined, setLogin] = useState(true);
   console.log(Logined);
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-wite">
+      <div className="relative z-0 bg-white">
         {Logined && <LeftBar />}
         {Logined && <AIChatAssistant />}
         <Routes>
@@ -29,11 +32,16 @@ const App = () => {
             element={<SignupPage setLoginLogout={setLogin} />}
           />
           <Route path="/user/auth/:id" element={<></>} />
-          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects" element={<ProjectPage />} >
+            <Route path='detail' element={<ProjectDetails />}>
+              <Route path=':id' element={<ProjectDetails />} />
+            </Route>
+          </Route>
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/predictions" element={<PredictionsPage />} />
-          <Route path="/personal" element={<></>} />
-          <Route path="/settings" element={<></>} />
+          <Route path='/project_detail' element={<ProjectDetails />} />
+          <Route path="/personal" element={<PersonalPage />} />
+          <Route path="/settings" element={<SettingPage />} />
           <Route path="/for_got_password" element={<></>} />
         </Routes>
       </div>
