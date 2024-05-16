@@ -32,14 +32,11 @@ const App = () => {
             element={<SignupPage setLoginLogout={setLogin} />}
           />
           <Route path="/user/auth/:id" element={<></>} />
-          <Route path="/projects" element={<ProjectPage />} >
-            <Route path='detail' element={<ProjectDetails />}>
-              <Route path=':id' element={<ProjectDetails />} />
-            </Route>
-          </Route>
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/kpi" element={<KPIPage />} />
-          <Route path='/project_detail' element={<ProjectDetails />} />
+          <Route path="/project_detail" element={<ProjectDetails />} />
           <Route path="/personal" element={<PersonalPage />} />
           <Route path="/settings" element={<SettingPage />} />
           <Route path="/for_got_password" element={<></>} />
