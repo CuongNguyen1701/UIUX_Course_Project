@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { LeftBar, AIChatAssistant } from "./components";
+import { LeftBar, AIChatAssistant, ProjectList } from "./components";
 import {
   LoginPage,
   HomePage,
@@ -37,6 +37,8 @@ const App = () => {
               <Route path=':id' element={<ProjectDetails />} />
             </Route>
           </Route>
+          <Route path='/all' element={<ProjectList />} />
+
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/kpi" element={<KPIPage />} />
           <Route path='/project_detail' element={<ProjectDetails />} />

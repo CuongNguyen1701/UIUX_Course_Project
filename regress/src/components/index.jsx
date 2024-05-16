@@ -7,4 +7,5 @@ import SuccessPopUp from "./SuccessPopUp";
 import ScheduleBoard from "./ScheduleBoard";
 import Title from "./Title";
 import LineChart from "./LineChart";
-export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Title, LineChart };
+import ProjectList from "./ProjectList";
+export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Title, LineChart, ProjectList };

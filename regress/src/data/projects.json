@@ -4,6 +4,7 @@
     "title": "UIUX",
     "description": "Hanoi University of Science and Technology",
     "tag": "Ưu tiên",
+    "deadline": "2024-05-17T03:24:00",
     "process": 90
   },
   {
@@ -11,6 +12,7 @@
     "title": "Đồ án",
     "description": "Hanoi University of Science and Technology",
     "tag": "Nên làm",
+    "deadline": "2024-06-18T05:24:00",
     "process": 40
   },
   {
@@ -18,6 +20,7 @@
     "title": "NeuralCV",
     "description": "BusiTech BootCamp",
     "tag": "Nên làm",
+    "deadline": "2024-07-18T08:24:00",
     "process": 20
   },
   {
@@ -25,6 +28,7 @@
     "title": "Intro AI",
     "description": "Hanoi University of Science and Technology",
     "tag": "Nên làm",
+    "deadline": "2025-06-18T05:24:00",
     "process": 60
   }
 ]
