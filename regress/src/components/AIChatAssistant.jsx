@@ -13,11 +13,13 @@ const ChatBubble = ({ text, isUser }) => {
       <img
         src={isUser ? avatar : agentLogo}
         alt="Avatar"
-        className="w-16 h-16 rounded-full"
+        className="w-12 h-12 rounded-full"
       />
       <div
-        className={`flex flex-col text-left gap-2 p-5 bg-primary text-white rounded-3xl w-1/2 h-fit mt-8 ${
-          isUser ? "rounded-tr-none" : "rounded-tl-none"
+        className={`flex flex-col text-left gap-2 p-3 bg-primary rounded-3xl w-2/3 h-fit mt-8 ${
+          isUser
+            ? "rounded-tr-none bg-primary text-white"
+            : "rounded-tl-none bg-white-100 text-black"
         } `}
       >
         {text.split("\n").map((line, index) => (
@@ -81,7 +83,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
     },
   ];
   return (
-    <div className="px-10 pb-5 mt-10 text-black rounded-lg rounded-tr-none pt-7 bg-primary-200 max-w-[32rem] w-fit text-sm">
+    <div className="px-10 pb-5 mt-10 text-black rounded-lg rounded-tr-none pt-7 bg-primary-200 max-w-[32rem] w-fit text-sm shadow-lg">
       <div className="flex flex-col-reverse gap-5">
         <form
           className="flex flex-row justify-between gap-1"
@@ -94,7 +96,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
           />
           <button
             type="submit"
-            className="p-0 m-0 bg-transparent border-2 w-fit h-fit rounded-2xl bg-secondary-100 border-secondary hover:border-primary hover:bg-secondary-200 "
+            className="p-0 m-0 bg-transparent border-2 rounded-full w-fit h-fit bg-secondary-100 border-secondary hover:border-primary hover:bg-secondary-200 "
           >
             <img
               src={sendLogo}
@@ -112,7 +114,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
             />
           ))}
         </div>
-        <div className="flex flex-col gap-2 overflow-y-scroll max-h-96">
+        <div className="flex flex-col gap-2 overflow-y-auto no-scrollbar max-h-96">
           {chatLog.map((chat) => (
             <ChatBubble text={chat.text} isUser={chat.isUser} key={chat.key} />
           ))}
