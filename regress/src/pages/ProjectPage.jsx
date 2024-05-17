@@ -25,14 +25,12 @@ const RecommendCard = ({ id, title, description, tag, process }) => {
     processWidth = "w-44";
   } else if (process < 100) {
     processColor = "bg-green-600";
-    processWidth = "w-52";
+    processWidth = "w-48";
   } else {
     processColor = "bg-green-600";
     processWidth = "w-56";
   }
 
-  console.log(processColor);
-  console.log(tagColor);
   return (
     <Link
       to={`${id}`}
@@ -53,7 +51,7 @@ const RecommendCard = ({ id, title, description, tag, process }) => {
         </div>
       </div>
       <div className="flex flex-col items-start self-stretch justify-start w-56 h-20 gap-1 p-2 group-hover:bg-gray-50">
-        <div className="text-black text-xs font-normal font-['Roboto'] leading-none">
+        <div className="text-black min-h-6 text-xs font-normal font-['Roboto'] leading-none">
           {description}
         </div>
         <div className="self-stretch text-black text-base font-medium font-['Roboto'] leading-normal">

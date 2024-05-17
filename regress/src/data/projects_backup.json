@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "UI-UX",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Ưu tiên",
+    "process": 80,
+    "tasks": [
+      { "name": "layout", "task_done": 95, "task_total": 123 },
+      { "name": "b&w", "task_done": 49, "task_total": 58 },
+      { "name": "design", "task_done": 80, "task_total": 100 },
+      { "name": "interact", "task_done": 8, "task_total": 10 },
+      { "name": "test", "task_done": 0, "task_total": 1 },
+      { "name": "deploy", "task_done": 1, "task_total": 1 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Đồ án",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 40,
+    "tasks": [
+      { "name": "task1", "task_done": 67, "task_total": 123 },
+      { "name": "task2", "task_done": 24, "task_total": 58 },
+      { "name": "task3", "task_done": 80, "task_total": 100 },
+      { "name": "task4", "task_done": 1, "task_total": 10 },
+      { "name": "task5", "task_done": 0, "task_total": 1 },
+      { "name": "task6", "task_done": 0, "task_total": 1 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "NeuralCV",
+    "description": "BusiTech BootCamp",
+    "tag": "Nên làm",
+    "process": 20,
+    "tasks": [
+      { "name": "task1", "task_done": 67, "task_total": 123 },
+      { "name": "task2", "task_done": 24, "task_total": 58 },
+      { "name": "task3", "task_done": 80, "task_total": 100 },
+      { "name": "task4", "task_done": 1, "task_total": 10 },
+      { "name": "task5", "task_done": 0, "task_total": 1 },
+      { "name": "task6", "task_done": 0, "task_total": 1 }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Intro AI",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 60,
+    "tasks": [
+      { "name": "task1", "task_done": 67, "task_total": 123 },
+      { "name": "task2", "task_done": 24, "task_total": 58 },
+      { "name": "task3", "task_done": 80, "task_total": 100 },
+      { "name": "task4", "task_done": 1, "task_total": 10 },
+      { "name": "task5", "task_done": 0, "task_total": 1 },
+      { "name": "task6", "task_done": 0, "task_total": 1 }
+    ]
+  }
+]
