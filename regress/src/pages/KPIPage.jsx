@@ -30,7 +30,7 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
         color = 'text-blue-500';
         rating = 'Tốt';
     } else {
-        color = 'text-green-500';
+        color = 'text-green-600';
         rating = 'Xuất sắc';
     }
     const percent_done = Math.round(Math.min((task_done / task_total) * 100, 100));
