@@ -94,7 +94,7 @@ const HomePage = () => {
       <div className="flex flex-col justify-start w-1/2 pt-10 pl-14 ml-80">
         <LineChart width={"100%"} height={"100%"} />
         <div className="flex flex-row justify-between">
-          <div className="rounded-xl mr-4 border border-gray-400"> <DonutChart /></div>
+          <div className="rounded-xl mr-4 border border-2 border-gray-200"> <DonutChart /></div>
           <ScheduleBoard />
         </div>
       </div>

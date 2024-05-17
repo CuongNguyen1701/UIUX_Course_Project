@@ -162,10 +162,10 @@ const ProjectDetails = () => {
       </div>
       <div className="flex flex-col items-center w-1/3 h-full pr-5 overflow-y-auto">
         <div
-          className="w-2/3 text-4xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
+          className="w-2/3 text-xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
           onClick={() => setAddTaskMode(true)}
         >
-          +
+          + Thêm công việc
         </div>
         {addTaskMode && (
           <form
