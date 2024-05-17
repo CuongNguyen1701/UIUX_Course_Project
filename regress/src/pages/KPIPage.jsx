@@ -1,5 +1,5 @@
 import React from "react";
-import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
+import { Title } from "../components";
 import teach from "../assets/teach.png";
 import research from "../assets/research.png";
 import service from "../assets/service.png";
@@ -84,16 +84,18 @@ const CheckList = ({ title, items }) => {
 }
 
 const KPIPage = () => {
-    const check_list_teach = {
-        title: 'Giảng dạy',
-        items: [
-            { title: 'Số tiết giảng dạy: 20/95', checked: false },
-            { title: 'Đánh giá của sinh viên: 19/20', checked: false },
-            { title: 'Chấm bài review round 1', checked: true },
-            { title: 'Chấm bài review round 2', checked: false },
-            { title: 'Chấm bài review round 2', checked: false },
-        ]
-    }
+    const check_list = [
+        {
+            title: 'Giảng dạy',
+            items: [
+                { title: 'Số tiết giảng dạy: 20/95', checked: false },
+                { title: 'Đánh giá của sinh viên: 19/20', checked: false },
+                { title: 'Chấm bài review round 1', checked: true },
+                { title: 'Chấm bài review round 2', checked: false },
+                { title: 'Chấm bài review round 2', checked: false },
+            ]
+        }
+    ]
     const data = {
         labels: ['January', 'February', 'March', 'April'],
         datasets: [
