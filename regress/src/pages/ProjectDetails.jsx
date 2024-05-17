@@ -6,7 +6,7 @@ import fs from "fs";
 import deleteIcon from "../assets/delete.svg";
 const ProjectName = ({ name }) => {
   return (
-    <h2 className="h-8 text-6xl place-content-center left-1/4 text-primary-300 w-fit ">
+    <h2 className="h-8 text-6xl text-gray-700 place-content-center left-1/4 w-fit ">
       Dự án: {name}
     </h2>
   );
@@ -25,7 +25,14 @@ const AddButton = () => {
   );
 };
 
-const WorkDetails = ({ editMode, name, index, task_done, task_total }) => {
+const WorkDetails = ({
+  editMode,
+  name,
+  index,
+  task_done,
+  task_total,
+  handleDeleteTask,
+}) => {
   const progress = (task_done / task_total) * 100;
   const progressColor =
     progress < 25
@@ -54,6 +61,7 @@ const WorkDetails = ({ editMode, name, index, task_done, task_total }) => {
             src={deleteIcon}
             className="w-5 h-5 rounded-full hover:bg-red-100 hover:cursor-pointer"
             alt="Delete"
+            onClick={handleDeleteTask}
           />
         )}
       </div>
@@ -96,11 +104,30 @@ const ProjectDetails = () => {
   const project_name = project.title;
   const [tasks, setTasks] = useState(project.tasks);
   const [showDialog, setShowDialog] = useState(false);
-  const [editMode, setEditMode] = useState(false);
-  const handleDeleteTask = (index) => {};
+  const [editMode, setEditMode] = useState(true);
+  const [addTaskMode, setAddTaskMode] = useState(false);
+  const handleDeleteTask = (index) => {
+    const DeleteTaskHandler = (e) => {
+      setTasks((prev) => prev.filter((task, i) => i !== index));
+    };
+    return DeleteTaskHandler;
+  };
   const toggleEditMode = (e) => {
     e.preventDefault();
     setEditMode((prev) => !prev);
+  };
+  const handleAddTask = (e) => {
+    e.preventDefault();
+    setTasks((prev) => [
+      ...prev,
+      {
+        id: prev.length + 1,
+        name: e.target[0].value,
+        task_done: e.target[1].value,
+        task_total: e.target[2].value,
+      },
+    ]);
+    setAddTaskMode(false);
   };
   return (
     <div className="relative flex flex-col items-center justify-between w-screen h-screen text-black bg-white">
@@ -120,7 +147,7 @@ const ProjectDetails = () => {
           >
             Xoá dự án
           </div>
-          <div
+          {/* <div
             className={`h-full px-3 py-2 rounded-xl border-2 cursor-pointer
             ${
               editMode
@@ -130,10 +157,48 @@ const ProjectDetails = () => {
             onClick={toggleEditMode}
           >
             {editMode ? "Dừng cập nhật" : "Cập nhật dự án"}
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="flex flex-col items-center w-1/3 h-full overflow-y-auto">
+      <div className="flex flex-col items-center w-1/3 h-full pr-5 overflow-y-auto">
+        <div
+          className="w-2/3 text-4xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
+          onClick={() => setAddTaskMode(true)}
+        >
+          +
+        </div>
+        {addTaskMode && (
+          <form
+            className="flex flex-row items-center justify-between gap-2 mt-10 ml-20 transform bg-white"
+            onSubmit={handleAddTask}
+          >
+            Task mới:
+            <p className="">
+              <input
+                type="text"
+                placeholder="Tên..."
+                className="p-1 bg-white border-2 border-primary rounded-xl"
+              />
+            </p>
+            <input
+              type="text"
+              placeholder="đã hoàn thành"
+              className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
+            />
+            /
+            <input
+              type="text"
+              placeholder="tổng số"
+              className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
+            />
+            <button
+              name="submit"
+              className="text-white rounded-full bg-primary hover:bg-primary-200 hover:cursor-pointer"
+            >
+              +
+            </button>
+          </form>
+        )}
         {tasks.map((task, index) => (
           <WorkDetails
             editMode={editMode}
@@ -143,6 +208,7 @@ const ProjectDetails = () => {
             index={index + 1}
             task_done={task.task_done}
             task_total={task.task_total}
+            handleDeleteTask={handleDeleteTask(index)}
           />
         ))}
       </div>
