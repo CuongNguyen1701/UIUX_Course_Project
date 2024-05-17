@@ -74,11 +74,11 @@ const ProjectPage = () => {
     <div className="relative flex flex-col justify-center w-screen min-h-screen bg-white">
       <Title title="Dự án" />
       <div className="flex flex-col ml-80 left-1/4">
-        <div className="grid grid-cols-2 mt-32 ml-16 mr-32">
+        <div className="grid grid-cols-2 mt-16 ml-16 mr-32">
           <LineChart width={"10%"} height={"320px"} />
-          <div className="left-0 flex flex-col py-3">
+          <div className="left-0 flex flex-col py-1">
             <div className="flex flex-row justify-between px-3 left-2">
-              <div className="text-2xl font-semibold text-gray-700">Gợi ý</div>
+              <div className="text-2xl pl-1 font-semibold text-gray-700">Gợi ý</div>
               <Link to="all">Xem tất cả</Link>
             </div>
             <div className="relative grid-flow-row grid-cols-2">
