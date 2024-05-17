@@ -21,16 +21,16 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
 
     let color, rating;
     if (percentage <= 25) {
-        color = 'text-red-500';
+        color = 'text-red-600';
         rating = 'Thấp';
     } else if (percentage <= 50) {
         color = 'text-yellow-500';
         rating = 'Trung bình';
     } else if (percentage <= 75) {
-        color = 'text-blue-500';
+        color = 'text-blue-300';
         rating = 'Tốt';
     } else {
-        color = 'text-green-500';
+        color = 'text-green-600';
         rating = 'Xuất sắc';
     }
     const percent_done = Math.round(Math.min((task_done / task_total) * 100, 100));
@@ -77,7 +77,7 @@ const CheckList = ({ title, items }) => {
         );
     };
     return (
-        <div className="flex flex-col absolute w-72 rounded-2xl h-3/4 bg-primary-300 right-16 bottom-12">
+        <div className="flex flex-col absolute w-72 rounded-2xl h-3/4 bg-primary-200 right-16 bottom-12">
             <div className="m-4 text-2xl font-bold items-center justify-center">{title}</div>
             {items.map((item, index) => (index < 6) && (
                 <CheckListItem className='items-center justify-center' key={index} title={item.title} checked={item.checked} />
