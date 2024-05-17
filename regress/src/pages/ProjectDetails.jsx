@@ -45,9 +45,9 @@ const WorkDetails = ({
           : "bg-green-500";
 
   return (
-    <div className="flex flex-col items-start mt-10 ml-10 transform scale-150 bg-white">
+    <div className="flex flex-col items-start mt-10 ml-10 transform scale-150 bg-white border-b m-2">
       <p className="">
-        Task {index}: {name}
+        Công việc {index}: {name}
       </p>
       <div className="flex flex-row items-center gap-5">
         <div className="w-64 h-2 bg-gray-200 rounded border-black border-1">
@@ -133,7 +133,7 @@ const ProjectDetails = () => {
     setAddTaskMode(false);
   };
   return (
-    <div className="relative flex flex-col items-center justify-between w-screen h-screen text-black bg-white">
+    <div className="relative flex flex-col items-center justify-between pl-44 w-screen h-screen text-black bg-white">
       <div>
         <Title title="Chi tiết dự án" />
       </div>
