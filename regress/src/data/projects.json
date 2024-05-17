@@ -5,7 +5,7 @@
     "description": "Hanoi University of Science and Technology",
     "tag": "Ưu tiên",
     "process": 80,
-    "deadline": "2024-05-17T03:24:00",
+    "deadline": "2024-05-15T03:24:00",
     "tasks": [
       {
         "name": "layout",
@@ -45,7 +45,7 @@
     "description": "Hanoi University of Science and Technology",
     "tag": "Nên làm",
     "process": 40,
-    "deadline": "2024-05-17T03:24:00",
+    "deadline": "2024-06-23T03:24:00",
     "tasks": [
       {
         "name": "task1",
@@ -85,7 +85,7 @@
     "description": "BusiTech BootCamp",
     "tag": "Nên làm",
     "process": 20,
-    "deadline": "2024-05-17T03:24:00",
+    "deadline": "2024-07-17T03:24:00",
     "tasks": [
       {
         "name": "task1",
@@ -125,7 +125,7 @@
     "description": "Hanoi University of Science and Technology",
     "tag": "Nên làm",
     "process": 60,
-    "deadline": "2024-05-17T03:24:00",
+    "deadline": "2024-08-19T03:24:00",
     "tasks": [
       {
         "name": "task1",
@@ -156,6 +156,366 @@
         "name": "task6",
         "task_done": 0,
         "task_total": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "ITSS",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 60,
+    "deadline": "2024-09-10T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 67,
+        "task_total": 123
+      },
+      {
+        "name": "task2",
+        "task_done": 24,
+        "task_total": 58
+      },
+      {
+        "name": "task3",
+        "task_done": 80,
+        "task_total": 100
+      },
+      {
+        "name": "task4",
+        "task_done": 1,
+        "task_total": 10
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 1
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Kiểm thử phần mềm",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 0,
+    "deadline": "2024-12-16T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 67,
+        "task_total": 123
+      },
+      {
+        "name": "task2",
+        "task_done": 24,
+        "task_total": 58
+      },
+      {
+        "name": "task3",
+        "task_done": 80,
+        "task_total": 100
+      },
+      {
+        "name": "task4",
+        "task_done": 1,
+        "task_total": 10
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 1
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Học máy",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 70,
+    "deadline": "2025-01-05T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Cơ sở dữ liệu",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 100,
+    "deadline": "2025-03-10T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Tiếng Nhật 8",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 100,
+    "deadline": "2025-04-20T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Cấu trúc dữ liệu",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 20,
+    "deadline": "2025-04-25T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Thuật toán ứng dụng",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 80,
+    "deadline": "2025-04-01T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Tính toán khoa học",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 100,
+    "deadline": "2025-04-30T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Nghiên cứu tốt nghiệp 1",
+    "description": "Hanoi University of Science and Technology",
+    "tag": "Nên làm",
+    "process": 70,
+    "deadline": "2026-04-22T03:24:00",
+    "tasks": [
+      {
+        "name": "task1",
+        "task_done": 0,
+        "task_total": 10
+      },
+      {
+        "name": "task2",
+        "task_done": 0,
+        "task_total": 20
+      },
+      {
+        "name": "task3",
+        "task_done": 0,
+        "task_total": 30
+      },
+      {
+        "name": "task4",
+        "task_done": 0,
+        "task_total": 40
+      },
+      {
+        "name": "task5",
+        "task_done": 0,
+        "task_total": 50
+      },
+      {
+        "name": "task6",
+        "task_done": 0,
+        "task_total": 60
       }
     ]
   }

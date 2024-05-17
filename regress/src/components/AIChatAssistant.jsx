@@ -51,7 +51,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
     e.target.message.value = "";
     // set a timeout to simulate the AI response
     setTimeout(async () => {
-      await insertChat("Hello, how can I help you?", false);
+      await insertChat("Xin chảo, tôi có thể giúp gì cho bạn hôm nay?", false);
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }, 2000);
   };
@@ -139,7 +139,7 @@ const AIChatAssistant = () => {
   };
   return (
     <Draggable bounds="body" defaultPosition={{ x: 100, y: 0 }}>
-      <div className="fixed z-10 flex flex-row m-10 bottom-10 right-40">
+      <div className="fixed z-50 flex flex-row m-10 bottom-10 right-40">
         {chatOpen && <ChatScreen chatLog={chatLog} insertChat={insertChat} />}
         <div className="select-none">
           <span

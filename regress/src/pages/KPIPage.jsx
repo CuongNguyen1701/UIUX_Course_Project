@@ -1,5 +1,5 @@
 import React from "react";
-import { LeftBar, Title, ScheduleBoard, LineChart } from "../components";
+import { Title } from "../components";
 import teach from "../assets/teach.png";
 import research from "../assets/research.png";
 import service from "../assets/service.png";
@@ -40,10 +40,10 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center w-60 h-40 bg-white rounded-lg border-2 text-black m-4">
+            <div className="flex flex-col items-center justify-center h-40 m-4 text-black bg-white border-2 rounded-lg w-60">
                 <div className="flex flex-row m-6">
                     <img src={icon} alt="icon" className="w-16 h-16" />
-                    <div className="text-lg font-bold ml-4">{title}</div>
+                    <div className="ml-4 text-lg font-bold">{title}</div>
                 </div>
                 <div className="text-sm text-gray-500">
                     <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
@@ -56,11 +56,12 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
 }
 
 const CheckListItem = ({ title, checked }) => {
+    let text_color = checked ? 'text-black font-bold' : 'text-gray-500';
     return (
-        <div className="flex flex-row items-center justify-start w-full rounded-lg border-2 bg-white">
+        <div className="flex flex-row items-center bg-white border-2 rounded-lg m-3">
             <input type="checkbox" checked={checked} className="m-4" />
-            <div className="text-lg">{title}</div>
-        </div>
+            <div className={`text-sm ${text_color} justify-start`}>{title}</div>
+        </div >
     );
 }
 
@@ -68,31 +69,51 @@ const CheckList = ({ title, items }) => {
     if (items === null || items.length === 0) {
         console.log("No data");
         return (
-            <div className="w-1/6 h-3/4 bg-secondary-200 absolute right-20 bottom-12 rounded-lg">
-                <div className="text-2xl font-bold m-4">{title}</div>
+            <div className="absolute w-1/6 rounded-lg bg-secondary-200 right-20 bottom-12">
+                <div className="m-4 text-2xl font-bold">{title}</div>
             </div>
         );
     };
     return (
-        <div className="flex flex-col items-start justify-start w-1/2 h-screen bg-primary rounded-lg border-2 m-4 absolute right-0">
-            <div className="text-2xl font-bold m-4">{title}</div>
-            {items.map((item, index) => (
-                <CheckListItem key={index} title={item.title} checked={item.checked} />
+        <div className="flex flex-col absolute w-72 rounded-2xl h-3/4 bg-primary-300 right-16 bottom-12">
+            <div className="m-4 text-2xl font-bold items-center justify-center">{title}</div>
+            {items.map((item, index) => (index < 6) && (
+                <CheckListItem className='items-center justify-center' key={index} title={item.title} checked={item.checked} />
             ))}
         </div>
     );
 }
 
 const KPIPage = () => {
-    const check_list_teach = {
-        title: 'Giảng dạy',
-        items: [
-            { title: 'Số tiết giảng dạy: 20/95', checked: false },
-            { title: 'Đánh giá của sinh viên: 19/20', checked: false },
-            { title: 'Chấm bài review round 1', checked: true },
-            { title: 'Chấm bài review round 2', checked: false },
-            { title: 'Chấm bài review round 2', checked: false },
-        ]
+    const check_list = [
+        {
+            title: 'Giảng dạy',
+            items: [
+                { title: 'Số tiết giảng dạy: 20/95', checked: false },
+                { title: 'Đánh giá của sinh viên: 19/20', checked: false },
+                { title: 'Chấm bài review round 1', checked: true },
+                { title: 'Chấm bài review round 2', checked: false },
+                { title: 'Chấm bài review round 3', checked: false },
+            ]
+        },
+        {
+            title: 'Nghiên cứu',
+            items: [
+                { title: 'Viết bài báo khoa học về tính dùng được', checked: true },
+                { title: 'Tham dự hội thảo khoa học UI - UX', checked: false },
+            ]
+        },
+        {
+            title: 'Phục vụ',
+            items: [
+                { title: 'Tham gia tổ chức hội thảo khoa học ở Đà Nẵng', checked: false },
+                { title: 'Tham gia tổ chức hội thảo khoa học ở UET', checked: false },
+            ]
+        }
+    ]
+    const all_check_list = {
+        title: 'Hạng mục tiêu biểu',
+        items: check_list.flatMap(category => category.items)
     }
     const data = {
         labels: ['January', 'February', 'March', 'April'],
@@ -113,7 +134,7 @@ const KPIPage = () => {
             },
             {
                 label: 'Phục vụ',
-                data: [3, 1, 8, 6],
+                data: [1, 2, 1, 2],
                 backgroundColor: 'black',
                 bordercolor: 'black',
                 borderwidth: 1,
@@ -135,7 +156,7 @@ const KPIPage = () => {
     const [categories, setCategories] = useState([
         { id: "teaching", title: "Giảng dạy", task_done: 15, task_total: 19, icon: teach },
         { id: "research", title: "Nghiên cứu", task_done: 17, task_total: 35, icon: research },
-        { id: "service", title: "Phục vụ", task_done: 18, task_total: 78, icon: service },
+        { id: "service", title: "Phục vụ", task_done: 6, task_total: 24, icon: service },
     ]);
     return (
         <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-white">
@@ -153,11 +174,11 @@ const KPIPage = () => {
                             />
                         ))}
                     </div>
-                    <div className="relative items-center border-2 rounded-lg w-1/2 h-1/2">
+                    <div className="relative items-center w-1/2 border-2 rounded-lg h-1/2">
                         <Bar className="w-full" data={data} options={options} />
                     </div>
                 </div>
-                <CheckList className='absolute right-0' title={null} items={null} />
+                <CheckList className='absolute right-0' title={all_check_list.title} items={all_check_list.items} />
             </div>
         </div>
     );
