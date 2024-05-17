@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import getOrderStatus from './lib/helpers'
 import projects from '../data/projects.json'
 import Title from './Title'
-// import Dropdown from './Dropdown'
 
 const getProjectProcess = (process) => {
     let processColor;
@@ -42,7 +41,7 @@ export default function ProjectList() {
     return (
         <div className="relative flex flex-col h-screen w-screen bg-white">
             <Title title="Danh sách dự án" />
-            <div className="pt-32 ml-80 pl-4 flex flex-row justify-start w-full">
+            <div className="pt-32 ml-80 pl-4 flex flex-row w-full gap-1/4 justify-between">
                 <button className='bg-green-400 text-gray-700'>+ Thêm dự án</button>
                 {/* <Dropdown /> */}
             </div>
