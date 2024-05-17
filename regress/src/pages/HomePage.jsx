@@ -1,5 +1,17 @@
 import React from "react";
 import { LeftBar, ScheduleBoard, Title, LineChart } from "../components";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 const Notification = ({ title, content, time, unread }) => {
   return (
     <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-500 rounded-xl">
@@ -51,6 +63,43 @@ const NotificationBar = () => {
 };
 
 const HomePage = () => {
+  const data = {
+    labels: ['March', 'April'],
+    datasets: [
+      {
+        label: 'Giảng dạy',
+        data: [3, 5],
+        backgroundColor: '#194DD3',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+      {
+        label: 'Nghiên cứu',
+        data: [7, 5],
+        backgroundColor: '#B3ACFB',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+      {
+        label: 'Phục vụ',
+        data: [1, 2],
+        backgroundColor: 'black',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+    ]
+  };
+  const allData = data.datasets.flatMap(dataset => dataset.data);
+  const maxDataValue = Math.max(...allData);
+  const maxY = Math.ceil(maxDataValue / 10) * 10;
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: maxY,
+      },
+    },
+  };
   return (
     <div className="relative flex flex-row items-center justify-start w-screen h-screen gap-6 bg-white">
       <Title title="Trang chủ" />
@@ -58,7 +107,7 @@ const HomePage = () => {
         <LineChart width={"100%"} height={"100%"} />
         <div className="flex flex-row justify-between">
           <ScheduleBoard />
-          <ScheduleBoard />
+          {/* <Bar className="w-1/4" data={data} options={options} /> */}
         </div>
       </div>
       <NotificationBar />
