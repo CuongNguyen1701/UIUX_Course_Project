@@ -2,7 +2,10 @@ import React from "react";
 import { LeftBar, ScheduleBoard, Title, LineChart } from "../components";
 const Notification = ({ title, content, time, unread }) => {
   return (
-    <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-200 rounded-xl">
+    <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-500 rounded-xl">
+      {unread && (
+        <div className="absolute top-0 right-0 w-3 h-3 rounded-full bg-primary"></div>
+      )}
       <div className="flex flex-row justify-between">
         <div className="text-lg font-bold text-black">{title}</div>
         <div className="text-sm text-black">{time}</div>
@@ -13,7 +16,7 @@ const Notification = ({ title, content, time, unread }) => {
 };
 const NotificationBar = () => {
   return (
-    <div className="top-0 right-0 z-20 flex flex-col w-1/5 gap-5 px-10 py-8 bg-white border-2 border-gray-200 rounded-xl h-3/4">
+    <div className="top-0 right-0 flex flex-col w-1/5 gap-5 px-10 py-8 bg-white border-2 border-gray-200 rounded-xl h-3/4">
       <div className="text-2xl font-bold text-left text-black">Thông báo</div>
       <div className="flex flex-row justify-start gap-10 text-center text-md">
         <div className="px-3 py-1 text-white rounded-full bg-primary">
