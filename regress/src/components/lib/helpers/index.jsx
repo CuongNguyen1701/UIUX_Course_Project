@@ -17,31 +17,31 @@ export default function getOrderStatus(process) {
     switch (status) {
         case 'Chưa thực hiện':
             return (
-                <span className="min-w-32 capitalize py-1 px-2 rounded-md text-xs text-sky-600 bg-sky-100">
+                <span className="capitalize min-w-24 py-1 px-2 rounded-md text-xs text-sky-600 bg-sky-100">
                     {status}
                 </span>
             )
         case 'Bắt đầu thực hiện':
             return (
-                <span className="min-w-32 capitalize py-1 px-2 rounded-md text-xs text-orange-600 bg-orange-100">
+                <span className="capitalize py-1 px-2 rounded-md text-xs text-orange-600 bg-orange-100">
                     {status}
                 </span>
             )
         case 'Thực hiện một chút':
             return (
-                <span className="min-w-32 capitalize py-1 px-2 rounded-md text-xs text-teal-600 bg-teal-100">
+                <span className="capitalize py-1 px-2 rounded-md text-xs text-teal-600 bg-teal-100">
                     {status}
                 </span>
             )
         case 'Đang thực hiện':
             return (
-                <span className="min-w-32 capitalize py-1 px-2 rounded-md text-xs text-yellow-600 bg-yellow-100">
+                <span className="capitalize py-1 px-2 rounded-md text-xs text-yellow-600 bg-yellow-100">
                     {status}
                 </span>
             )
         case 'Sắp hoàn thành':
             return (
-                <span className="min-w-32 capitalize py-1 px-2 rounded-md text-xs text-green-600 bg-green-100">
+                <span className="capitalize py-1 px-2 rounded-md text-xs text-green-600 bg-green-100">
                     {status}
                 </span>
             )
