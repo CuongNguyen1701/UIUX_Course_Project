@@ -1,5 +1,5 @@
 import React from "react";
-import { LeftBar, ScheduleBoard, Title, LineChart } from "../components";
+import { LeftBar, ScheduleBoard, Title, LineChart, DonutChart } from "../components";
 const Notification = ({ title, content, time, unread }) => {
   return (
     <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-500 rounded-xl">
@@ -56,8 +56,8 @@ const HomePage = () => {
       <Title title="Trang chủ" />
       <div className="flex flex-col justify-start w-1/2 pt-10 pl-14 ml-80">
         <LineChart width={"100%"} height={"100%"} />
-        <div className="flex flex-row justify-between">
-          <ScheduleBoard />
+        <div className="flex flex-row justify-between pt-6">
+          <div className="rounded-xl mr-4 border border-gray-400"> <DonutChart /></div>
           <ScheduleBoard />
         </div>
       </div>

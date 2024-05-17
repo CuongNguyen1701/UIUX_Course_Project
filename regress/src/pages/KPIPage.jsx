@@ -99,7 +99,7 @@ const KPIPage = () => {
         {
             title: 'Nghiên cứu',
             items: [
-                { title: 'Viết bài báo khoa học về tính dùng được', checked: true },
+                { title: 'Báo khoa học về tính dùng được', checked: true },
                 { title: 'Tham dự hội thảo khoa học UI - UX', checked: false },
             ]
         },

@@ -8,4 +8,5 @@ import ScheduleBoard from "./ScheduleBoard";
 import Title from "./Title";
 import LineChart from "./LineChart";
 import ProjectList from "./ProjectList";
-export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Title, LineChart, ProjectList };
+import { DonutChart } from "./DonutChart";
+export { LeftBar, AIChatAssistant, InputField, GoogleButton, FacebookButton, SuccessPopUp, ScheduleBoard, Title, LineChart, ProjectList, DonutChart };
