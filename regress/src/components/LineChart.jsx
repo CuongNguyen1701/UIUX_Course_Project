@@ -17,7 +17,7 @@ export const data = [
 
 export const options = {
     chart: {
-        title: "Số lượng công việc hoàn thành",
+        title: "Biểu đồ lượng dự án hoàn thành",
         subtitle: "Dự án",
     },
 };
