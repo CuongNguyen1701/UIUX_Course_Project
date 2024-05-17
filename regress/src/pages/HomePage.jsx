@@ -16,7 +16,7 @@ const Notification = ({ title, content, time, unread }) => {
 };
 const NotificationBar = () => {
   return (
-    <div className="top-0 right-0 flex flex-col w-1/5 gap-5 px-10 py-8 bg-white border-2 border-gray-200 rounded-xl h-3/4">
+    <div className="top-0 right-0 flex flex-col w-1/6 gap-5 px-10 py-8 mr-10 bg-white border-2 border-gray-200 rounded-xl h-3/4">
       <div className="text-2xl font-bold text-left text-black">Thông báo</div>
       <div className="flex flex-row justify-start gap-10 text-center text-md">
         <div className="px-3 py-1 text-white rounded-full bg-primary">
