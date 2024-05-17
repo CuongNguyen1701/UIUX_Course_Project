@@ -40,10 +40,10 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center w-60 h-40 bg-white rounded-lg border-2 text-black m-4">
+            <div className="flex flex-col items-center justify-center h-40 m-4 text-black bg-white border-2 rounded-lg w-60">
                 <div className="flex flex-row m-6">
                     <img src={icon} alt="icon" className="w-16 h-16" />
-                    <div className="text-lg font-bold ml-4">{title}</div>
+                    <div className="ml-4 text-lg font-bold">{title}</div>
                 </div>
                 <div className="text-sm text-gray-500">
                     <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
@@ -57,7 +57,7 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
 
 const CheckListItem = ({ title, checked }) => {
     return (
-        <div className="flex flex-row items-center justify-start w-full rounded-lg border-2 bg-white">
+        <div className="flex flex-row items-center justify-start w-full bg-white border-2 rounded-lg">
             <input type="checkbox" checked={checked} className="m-4" />
             <div className="text-lg">{title}</div>
         </div>
@@ -68,14 +68,14 @@ const CheckList = ({ title, items }) => {
     if (items === null || items.length === 0) {
         console.log("No data");
         return (
-            <div className="w-1/6 h-3/4 bg-secondary-200 absolute right-20 bottom-12 rounded-lg">
-                <div className="text-2xl font-bold m-4">{title}</div>
+            <div className="absolute w-1/6 rounded-lg h-3/4 bg-secondary-200 right-20 bottom-12">
+                <div className="m-4 text-2xl font-bold">{title}</div>
             </div>
         );
     };
     return (
-        <div className="flex flex-col items-start justify-start w-1/2 h-screen bg-primary rounded-lg border-2 m-4 absolute right-0">
-            <div className="text-2xl font-bold m-4">{title}</div>
+        <div className="absolute right-0 flex flex-col items-start justify-start w-1/2 h-screen m-4 border-2 rounded-lg bg-primary">
+            <div className="m-4 text-2xl font-bold">{title}</div>
             {items.map((item, index) => (
                 <CheckListItem key={index} title={item.title} checked={item.checked} />
             ))}
@@ -155,7 +155,7 @@ const KPIPage = () => {
                             />
                         ))}
                     </div>
-                    <div className="relative items-center border-2 rounded-lg w-1/2 h-1/2">
+                    <div className="relative items-center w-1/2 border-2 rounded-lg h-1/2">
                         <Bar className="w-full" data={data} options={options} />
                     </div>
                 </div>

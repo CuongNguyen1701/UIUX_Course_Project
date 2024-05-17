@@ -19,5 +19,6 @@ module.exports = {
     ],
     "no-unused-vars": 1,
     "react/prop-types": 0,
+    "no-extra-semi": 1,
   },
 };

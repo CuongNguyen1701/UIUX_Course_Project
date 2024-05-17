@@ -82,7 +82,7 @@ const ProjectPage = () => {
               <Link to="all">Xem tất cả</Link>
             </div>
             <div className="relative grid-flow-row grid-cols-2">
-              {projects.map((project) => (
+              {projects.map((project, index) => (index < 4) && (
                 <RecommendCard
                   title={project.title}
                   description={project.description}
