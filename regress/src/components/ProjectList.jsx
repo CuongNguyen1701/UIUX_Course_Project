@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import getOrderStatus from './lib/helpers'
 import projects from '../data/projects.json'
 import Title from './Title'
+// import Dropdown from './Dropdown'
 
 const getProjectProcess = (process) => {
     let processColor;
@@ -41,7 +42,11 @@ export default function ProjectList() {
     return (
         <div className="relative flex flex-col h-screen w-screen bg-white">
             <Title title="Danh sách dự án" />
-            <div className='pt-44'>
+            <div className="pt-32 ml-80 pl-4 flex flex-row justify-start w-full">
+                <button className='bg-green-400 text-gray-700'>+ Thêm dự án</button>
+                {/* <Dropdown /> */}
+            </div>
+            <div className='pt-1'>
                 <div className="ml-80 bg-white px-4 pt-3 pb-4 ">
                     <div className="mt-3">
                         <table className="w-full text-gray-700 font-['Roboto']">
@@ -64,7 +69,7 @@ export default function ProjectList() {
                                         <td className="text-left pl-4 border-r-2 border-primary-200 font-['Roboto'] text-md">
                                             <Link to={`/projects/${project.id}`}>{project.title}</Link>
                                         </td>
-                                        <td className="text-left pl-8 border-r-2 border-primary-200 font-['Roboto'] text-md">
+                                        <td className="text-left pl-5 border-r-2 border-primary-200 font-['Roboto'] text-md">
                                             {project.description}
                                         </td>
                                         <td className="text-left pl-6 border-r-2 border-primary-200 font-['Roboto'] text-md">{format(new Date(project.deadline), 'dd MMM yyyy')}</td>
