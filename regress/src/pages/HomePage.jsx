@@ -13,7 +13,7 @@ const Notification = ({ title, content, time, unread }) => {
 };
 const NotificationBar = () => {
   return (
-    <div className="top-0 right-0 z-20 flex flex-col w-1/5 gap-5 px-10 py-8 bg-white border-2 border-gray-200 rounded-xl h-3/4">
+    <div className="top-0 right-0 z-20 flex flex-col w-1/5 gap-5 px-10 mt-4 py-8 bg-white border-2 border-gray-200 rounded-xl h-3/4">
       <div className="text-2xl font-bold text-left text-black">Thông báo</div>
       <div className="flex flex-row justify-start gap-10 text-center text-md">
         <div className="px-3 py-1 text-white rounded-full bg-primary">
@@ -50,7 +50,7 @@ const HomePage = () => {
   return (
     <div className="relative flex flex-row items-center justify-start w-screen h-screen gap-6 bg-white">
       <Title title="Trang chủ" />
-      <div className="flex flex-col justify-start w-1/2 pl-24 ml-96">
+      <div className="flex flex-col justify-start pt-10 w-1/2 pl-14 ml-80">
         <LineChart width={"100%"} height={"100%"} />
         <div className="flex flex-row justify-between">
           <ScheduleBoard />
