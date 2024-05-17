@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import projectsData from "../data/projects.json";
 import fs from "fs";
 import deleteIcon from "../assets/delete.svg";
+
 const ProjectName = ({ name }) => {
   return (
     <h2 className="h-8 text-3xl text-gray-700 place-content-center left-1/4 w-fit ">
@@ -69,6 +70,7 @@ const WorkDetails = ({
     </div>
   );
 };
+
 const DeleteConfirmationDialog = ({ showDialog, setShowDialog }) => {
   return (
     showDialog && (
@@ -98,6 +100,7 @@ const DeleteConfirmationDialog = ({ showDialog, setShowDialog }) => {
     )
   );
 };
+
 const ProjectDetails = () => {
   const { id } = useParams();
   const project = projectsData.find((project) => project.id == id);
@@ -160,12 +163,14 @@ const ProjectDetails = () => {
           </div> */}
         </div>
       </div>
-      <div className="flex flex-col items-center w-1/3 h-full pr-5 overflow-y-auto">
+      <div className="flex flex-col items-center w-full h-full pr-5 overflow-y-auto">
         <div
-          className="w-2/3 text-4xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
+          className=" text-4xl font-thin text-primary border-primary  hover:cursor-pointer"
           onClick={() => setAddTaskMode(true)}
         >
-          +
+          <div className="text-xl border-2 border border-primary-300 rounded-3xl p-2">
+            + Thêm công việc
+          </div>
         </div>
         {addTaskMode && (
           <form
@@ -182,13 +187,13 @@ const ProjectDetails = () => {
             </p>
             <input
               type="text"
-              placeholder="đã hoàn thành"
+              placeholder="Đã hoàn thành"
               className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
             />
             /
             <input
               type="text"
-              placeholder="tổng số"
+              placeholder="Tổng số"
               className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
             />
             <button
