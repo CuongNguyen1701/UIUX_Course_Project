@@ -51,6 +51,43 @@ const NotificationBar = () => {
 };
 
 const HomePage = () => {
+  const data = {
+    labels: ['March', 'April'],
+    datasets: [
+      {
+        label: 'Giảng dạy',
+        data: [3, 5],
+        backgroundColor: '#194DD3',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+      {
+        label: 'Nghiên cứu',
+        data: [7, 5],
+        backgroundColor: '#B3ACFB',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+      {
+        label: 'Phục vụ',
+        data: [1, 2],
+        backgroundColor: 'black',
+        bordercolor: 'black',
+        borderwidth: 1,
+      },
+    ]
+  };
+  const allData = data.datasets.flatMap(dataset => dataset.data);
+  const maxDataValue = Math.max(...allData);
+  const maxY = Math.ceil(maxDataValue / 10) * 10;
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: maxY,
+      },
+    },
+  };
   return (
     <div className="relative flex flex-row items-center justify-start w-screen h-screen gap-6 bg-white">
       <Title title="Trang chủ" />

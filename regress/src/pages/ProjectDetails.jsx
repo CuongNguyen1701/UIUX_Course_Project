@@ -6,7 +6,7 @@ import fs from "fs";
 import deleteIcon from "../assets/delete.svg";
 const ProjectName = ({ name }) => {
   return (
-    <h2 className="h-8 text-6xl text-gray-700 place-content-center left-1/4 w-fit ">
+    <h2 className="h-8 text-3xl text-gray-700 place-content-center left-1/4 w-fit ">
       Dự án: {name}
     </h2>
   );
@@ -38,10 +38,10 @@ const WorkDetails = ({
     progress < 25
       ? "bg-red-500"
       : progress < 50
-      ? "bg-yellow-500"
-      : progress < 75
-      ? "bg-blue-500"
-      : "bg-green-500";
+        ? "bg-yellow-500"
+        : progress < 75
+          ? "bg-blue-500"
+          : "bg-green-500";
 
   return (
     <div className="flex flex-col items-start mt-10 ml-10 transform scale-150 bg-white">

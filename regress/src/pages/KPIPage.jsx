@@ -14,10 +14,6 @@ import {
     Legend,
 } from 'chart.js'
 
-// const tailwindConfig = import('../tailwind.config.js');
-
-// const colors = tailwindConfig.theme.colors;
-
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import avatar from "../assets/avatar.png";
 import { useLocation } from "react-router-dom";
+import regress_logo from "../assets/regress.svg";
 const NavButton = ({ name, dest, current_loc }) => {
   return (
     <li>
@@ -26,7 +27,7 @@ const LeftBar = () => {
   return (
     <aside className="fixed top-0 left-0 z-20 flex flex-col w-1/5 h-screen px-10 py-12 bg-white border-r-2 border-gray-200 left-bar">
       <Link to="/" className="flex self-center w-20 h-20">
-        <img src={logo} alt="Regress Logo" />
+        <img src={regress_logo} alt="Regress Logo" />
       </Link>
       <nav className="flex flex-col justify-between h-full pt-10">
         <div className="relative left-0">
