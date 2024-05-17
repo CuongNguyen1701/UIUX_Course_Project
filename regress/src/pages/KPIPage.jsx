@@ -4,6 +4,7 @@ import teach from "../assets/teach.png";
 import research from "../assets/research.png";
 import service from "../assets/service.png";
 import { Bar } from 'react-chartjs-2';
+import { useState } from "react";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -19,7 +20,7 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const CategoryBox = ({ title, task_done, task_total, icon }) => {
+const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
     const percentage = Math.min((task_done / task_total) * 100, 100);
 
     let color, rating;
@@ -38,21 +39,61 @@ const CategoryBox = ({ title, task_done, task_total, icon }) => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center w-60 h-40 bg-white rounded-lg border-2 text-black m-4">
-            <div className="flex flex-row m-6">
-                <img src={icon} alt="icon" className="w-16 h-16" />
-                <div className="text-lg font-bold ml-4">{title}</div>
+        <div>
+            <div className="flex flex-col items-center justify-center w-60 h-40 bg-white rounded-lg border-2 text-black m-4">
+                <div className="flex flex-row m-6">
+                    <img src={icon} alt="icon" className="w-16 h-16" />
+                    <div className="text-lg font-bold ml-4">{title}</div>
+                </div>
+                <div className="text-sm text-gray-500">
+                    <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
+                </div>
             </div>
-            <div className="text-sm text-gray-500">
-                <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
+            <div onClick={onClick}>
             </div>
         </div>
     );
 }
 
-import { useState } from "react";
+const CheckListItem = ({ title, checked }) => {
+    return (
+        <div className="flex flex-row items-center justify-start w-full rounded-lg border-2 bg-white">
+            <input type="checkbox" checked={checked} className="m-4" />
+            <div className="text-lg">{title}</div>
+        </div>
+    );
+}
+
+const CheckList = ({ title, items }) => {
+    if (items === null || items.length === 0) {
+        console.log("No data");
+        return (
+            <div className="w-1/6 h-3/4 bg-secondary-200 absolute right-20 bottom-12 rounded-lg">
+                <div className="text-2xl font-bold m-4">{title}</div>
+            </div>
+        );
+    };
+    return (
+        <div className="flex flex-col items-start justify-start w-1/2 h-screen bg-primary rounded-lg border-2 m-4 absolute right-0">
+            <div className="text-2xl font-bold m-4">{title}</div>
+            {items.map((item, index) => (
+                <CheckListItem key={index} title={item.title} checked={item.checked} />
+            ))}
+        </div>
+    );
+}
 
 const KPIPage = () => {
+    const check_list_teach = {
+        title: 'Giảng dạy',
+        items: [
+            { title: 'Số tiết giảng dạy: 20/95', checked: false },
+            { title: 'Đánh giá của sinh viên: 19/20', checked: false },
+            { title: 'Chấm bài review round 1', checked: true },
+            { title: 'Chấm bài review round 2', checked: false },
+            { title: 'Chấm bài review round 2', checked: false },
+        ]
+    }
     const data = {
         labels: ['January', 'February', 'March', 'April'],
         datasets: [
@@ -92,28 +133,31 @@ const KPIPage = () => {
     };
 
     const [categories, setCategories] = useState([
-        { title: "Giảng dạy", task_done: 15, task_total: 19, icon: teach },
-        { title: "Nghiên cứu", task_done: 17, task_total: 35, icon: research },
-        { title: "Phục vụ", task_done: 18, task_total: 78, icon: service },
+        { id: "teaching", title: "Giảng dạy", task_done: 15, task_total: 19, icon: teach },
+        { id: "research", title: "Nghiên cứu", task_done: 17, task_total: 35, icon: research },
+        { id: "service", title: "Phục vụ", task_done: 18, task_total: 78, icon: service },
     ]);
     return (
         <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-white">
-            <div>
-                <Title title="KPI" />
-            </div>
-            <div className="relative flex flex-row flex-wrap items-center justify-center bg-white top-9 m-9">
-                {categories.map((category, index) => (
-                    <CategoryBox
-                        key={index}
-                        title={category.title}
-                        task_done={category.task_done}
-                        task_total={category.task_total}
-                        icon={category.icon}
-                    />
-                ))}
-            </div>
-            <div className="relative items-center bg-white border-2 rounded-lg w-1/2 h-1/2">
-                <Bar className="w-full" data={data} options={options} />
+            <Title title="KPI" />
+            <div className="relative flex flex-row items-center justify-center w-full h-full">
+                <div className="relative flex flex-col items-center justify-center w-full h-full">
+                    <div className="relative flex flex-row flex-wrap items-center justify-center top-9 m-9">
+                        {categories.map((category, index) => (
+                            <CategoryBox
+                                key={index}
+                                title={category.title}
+                                task_done={category.task_done}
+                                task_total={category.task_total}
+                                icon={category.icon}
+                            />
+                        ))}
+                    </div>
+                    <div className="relative items-center border-2 rounded-lg w-1/2 h-1/2">
+                        <Bar className="w-full" data={data} options={options} />
+                    </div>
+                </div>
+                <CheckList className='absolute right-0' title={null} items={null} />
             </div>
         </div>
     );
