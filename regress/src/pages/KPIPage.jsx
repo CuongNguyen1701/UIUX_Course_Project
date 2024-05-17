@@ -77,7 +77,7 @@ const CheckList = ({ title, items }) => {
     return (
         <div className="flex flex-col absolute w-1/5 rounded-2xl h-3/4 bg-secondary-200 right-10 bottom-12">
             <div className="m-4 text-2xl font-bold items-center justify-center">{title}</div>
-            {items.map((item, index) => (
+            {items.map((item, index) => (index < 6) && (
                 <CheckListItem className='items-center justify-center' key={index} title={item.title} checked={item.checked} />
             ))}
         </div>
@@ -111,6 +111,10 @@ const KPIPage = () => {
             ]
         }
     ]
+    const all_check_list = {
+        title: 'Hạng mục tiêu biểu',
+        items: check_list.flatMap(category => category.items)
+    }
     const data = {
         labels: ['January', 'February', 'March', 'April'],
         datasets: [
@@ -174,7 +178,7 @@ const KPIPage = () => {
                         <Bar className="w-full" data={data} options={options} />
                     </div>
                 </div>
-                <CheckList className='absolute right-0' title={check_list[0].title} items={check_list[0].items} />
+                <CheckList className='absolute right-0' title={all_check_list.title} items={all_check_list.items} />
             </div>
         </div>
     );
