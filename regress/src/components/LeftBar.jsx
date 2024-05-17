@@ -33,12 +33,12 @@ const LeftBar = () => {
           <ul className="flex flex-col gap-2 text-left">
             { }
             <NavButton name="Trang chủ" dest="/" current_loc={location} />
-            <NavButton name="Dự án" dest="/projects" current_loc={location} />
             <NavButton
               name="KPI"
               dest="/kpi"
               current_loc={location}
             />
+            <NavButton name="Dự án" dest="/projects" current_loc={location} />
           </ul>
         </div>
         <Link
