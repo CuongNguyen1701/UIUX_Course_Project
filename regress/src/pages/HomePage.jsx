@@ -2,7 +2,7 @@ import React from "react";
 import { LeftBar, ScheduleBoard, Title, LineChart, DonutChart } from "../components";
 const Notification = ({ title, content, time, unread }) => {
   return (
-    <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-500 rounded-xl">
+    <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-200 rounded-xl">
       <div className="flex flex-row justify-between">
         {
           unread && null
@@ -20,10 +20,10 @@ const NotificationBar = () => {
     <div className="top-0 right-0 flex flex-col w-1/5 gap-5 px-10 py-8 mt-4 mr-10 bg-white border-2 border-gray-200 rounded-xl h-3/4">
       <div className="text-2xl font-bold text-left text-black">Thông báo</div>
       <div className="flex flex-row justify-start gap-10 text-center text-md">
-        <div className="px-3 py-1 text-white rounded-full bg-primary">
+        <div className="px-3 py-1 text-white text-center rounded-full bg-primary">
           Tất cả
         </div>
-        <div className="px-3 py-1 text-black bg-white border-2 border-black rounded-full">
+        <div className="px-3 py-1 text-black bg-white border-2 border-gray-200 rounded-full">
           Chưa đọc
         </div>
       </div>
