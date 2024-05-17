@@ -75,7 +75,7 @@ const CheckList = ({ title, items }) => {
         );
     };
     return (
-        <div className="flex flex-col absolute w-1/5 rounded-2xl h-3/4 bg-secondary-200 right-10 bottom-12">
+        <div className="flex flex-col absolute w-72 rounded-2xl h-3/4 bg-primary-300 right-16 bottom-12">
             <div className="m-4 text-2xl font-bold items-center justify-center">{title}</div>
             {items.map((item, index) => (index < 6) && (
                 <CheckListItem className='items-center justify-center' key={index} title={item.title} checked={item.checked} />

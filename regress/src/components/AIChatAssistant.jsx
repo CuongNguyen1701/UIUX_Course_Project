@@ -51,7 +51,7 @@ const ChatScreen = ({ chatLog, insertChat }) => {
     e.target.message.value = "";
     // set a timeout to simulate the AI response
     setTimeout(async () => {
-      await insertChat("Hello, how can I help you?", false);
+      await insertChat("Xin chảo, tôi có thể giúp gì cho bạn hôm nay?", false);
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }, 2000);
   };

@@ -4,8 +4,8 @@ const Notification = ({ title, content, time, unread }) => {
   return (
     <div className="flex flex-col w-full h-20 p-2 border-2 border-gray-500 rounded-xl">
       <div className="flex flex-row justify-between">
-        {unread &&
-          null
+        {
+          unread && null
           // <div className="relative top-0 right-0 p-3 rounded-full bg-primary"></div>
         }
         <div className="text-lg font-bold text-black">{title}</div>
@@ -54,7 +54,7 @@ const HomePage = () => {
   return (
     <div className="relative flex flex-row items-center justify-start w-screen h-screen gap-6 bg-white">
       <Title title="Trang chủ" />
-      <div className="flex flex-col justify-start pt-10 w-1/2 pl-14 ml-80">
+      <div className="flex flex-col justify-start w-1/2 pt-10 pl-14 ml-80">
         <LineChart width={"100%"} height={"100%"} />
         <div className="flex flex-row justify-between">
           <ScheduleBoard />
