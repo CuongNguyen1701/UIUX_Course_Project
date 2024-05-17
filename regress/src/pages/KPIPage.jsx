@@ -93,16 +93,18 @@ const KPIPage = () => {
             items: [
                 { title: 'Số tiết giảng dạy: 20/95', checked: false },
                 { title: 'Đánh giá của sinh viên: 19/20', checked: false },
-                { title: 'Chấm bài review round 1', checked: true },
-                { title: 'Chấm bài review round 2', checked: false },
-                { title: 'Chấm bài review round 3', checked: false },
+                { title: 'Được đánh giá cán bộ tốt', checked: false }
+                // { title: 'Chấm bài review round 1', checked: true },
+                // { title: 'Chấm bài review round 2', checked: false },
+                // { title: 'Chấm bài review round 3', checked: false },
             ]
         },
         {
             title: 'Nghiên cứu',
             items: [
                 { title: 'Báo khoa học về tính dùng được', checked: true },
-                { title: 'Tham dự hội thảo khoa học UI - UX', checked: false },
+                { title: 'Tham dự 3 hội thảo khoa học: 2/3', checked: false },
+                { title: 'Tham gia 1 dự án nghiên cứu: 1/1', checked: true },
             ]
         },
         {
