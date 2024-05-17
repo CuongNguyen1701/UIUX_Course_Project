@@ -9,6 +9,7 @@ const options = [
 
 const Dropdown = () => {
     const [selectedOption, setSelectedOption] = useState(null);
+    const defaultValue = options[0];
 
     const handleChange = selectedOption => {
         setSelectedOption(selectedOption);
@@ -16,7 +17,7 @@ const Dropdown = () => {
 
     return (
         <Select
-            value={selectedOption}
+            value={defaultValue}
             onChange={handleChange}
             options={options}
         />
