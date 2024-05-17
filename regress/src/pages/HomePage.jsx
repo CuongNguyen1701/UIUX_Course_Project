@@ -29,21 +29,21 @@ const NotificationBar = () => {
       </div>
 
       <Notification
-        title="Thông báo 1"
-        content="Nội dung thông báo 1"
-        time="12:00"
+        title="Chuẩn bị đến"
+        content="Trình bày vòng 2 UIUX"
+        time="12:10"
         unread={true}
       />
       <Notification
-        title="Thông báo 2"
-        content="Nội dung thông báo 2"
-        time="12:00"
+        title="Chuẩn bị đến"
+        content="Thi giữa kỳ Giải tích 3"
+        time="23:59"
         unread={false}
       />
       <Notification
-        title="Thông báo 3"
-        content="Nội dung thông báo 3"
-        time="12:00"
+        title=" Đã quá hạn"
+        content="Thi cuối kì ITSS"
+        time="1:00"
         unread={true}
       />
     </div>
@@ -56,7 +56,7 @@ const HomePage = () => {
       <Title title="Trang chủ" />
       <div className="flex flex-col justify-start w-1/2 pt-10 pl-14 ml-80">
         <LineChart width={"100%"} height={"100%"} />
-        <div className="flex flex-row justify-between pt-6">
+        <div className="flex flex-row justify-between">
           <div className="rounded-xl mr-4 border border-gray-400"> <DonutChart /></div>
           <ScheduleBoard />
         </div>
