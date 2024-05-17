@@ -6,7 +6,7 @@ import fs from "fs";
 import deleteIcon from "../assets/delete.svg";
 const ProjectName = ({ name }) => {
   return (
-    <h2 className="h-8 text-6xl place-content-center left-1/4 text-primary-300 w-fit ">
+    <h2 className="h-8 text-6xl text-gray-700 place-content-center left-1/4 w-fit ">
       Dự án: {name}
     </h2>
   );
@@ -25,7 +25,14 @@ const AddButton = () => {
   );
 };
 
-const WorkDetails = ({ editMode, name, index, task_done, task_total }) => {
+const WorkDetails = ({
+  editMode,
+  name,
+  index,
+  task_done,
+  task_total,
+  handleDeleteTask,
+}) => {
   const progress = (task_done / task_total) * 100;
   const progressColor =
     progress < 25
@@ -54,6 +61,7 @@ const WorkDetails = ({ editMode, name, index, task_done, task_total }) => {
             src={deleteIcon}
             className="w-5 h-5 rounded-full hover:bg-red-100 hover:cursor-pointer"
             alt="Delete"
+            onClick={handleDeleteTask}
           />
         )}
       </div>
@@ -98,7 +106,12 @@ const ProjectDetails = () => {
   const [showDialog, setShowDialog] = useState(false);
   const [editMode, setEditMode] = useState(true);
   const [addTaskMode, setAddTaskMode] = useState(false);
-  const handleDeleteTask = (index) => {};
+  const handleDeleteTask = (index) => {
+    const DeleteTaskHandler = (e) => {
+      setTasks((prev) => prev.filter((task, i) => i !== index));
+    };
+    return DeleteTaskHandler;
+  };
   const toggleEditMode = (e) => {
     e.preventDefault();
     setEditMode((prev) => !prev);
@@ -147,7 +160,7 @@ const ProjectDetails = () => {
           </div> */}
         </div>
       </div>
-      <div className="flex flex-col items-center w-1/3 h-full overflow-y-auto">
+      <div className="flex flex-col items-center w-1/3 h-full pr-5 overflow-y-auto">
         <div
           className="w-2/3 text-4xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
           onClick={() => setAddTaskMode(true)}
@@ -195,6 +208,7 @@ const ProjectDetails = () => {
             index={index + 1}
             task_done={task.task_done}
             task_total={task.task_total}
+            handleDeleteTask={handleDeleteTask(index)}
           />
         ))}
       </div>
