@@ -7,7 +7,7 @@ import deleteIcon from "../assets/delete.svg";
 
 const ProjectName = ({ name }) => {
   return (
-    <h2 className="h-8 text-3xl text-gray-700 place-content-center left-1/4 w-fit ">
+    <h2 className="h-8 text-3xl text-gray-700 place-content-center left-1/4 w-fit font-bold">
       Dự án: {name}
     </h2>
   );
@@ -46,7 +46,7 @@ const WorkDetails = ({
 
   return (
     <div className="flex flex-col items-start mt-10 ml-10 transform scale-150 bg-white border-b m-2">
-      <p className="">
+      <p className="font-bold">
         Công việc {index}: {name}
       </p>
       <div className="flex flex-row items-center gap-5">
@@ -66,7 +66,9 @@ const WorkDetails = ({
           />
         )}
       </div>
-      {task_done}/{task_total}
+      <div className="text-xs text-gray-500">
+        {task_done}/{task_total}
+      </div>
     </div>
   );
 };
