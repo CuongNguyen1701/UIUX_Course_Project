@@ -96,11 +96,25 @@ const ProjectDetails = () => {
   const project_name = project.title;
   const [tasks, setTasks] = useState(project.tasks);
   const [showDialog, setShowDialog] = useState(false);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(true);
+  const [addTaskMode, setAddTaskMode] = useState(false);
   const handleDeleteTask = (index) => {};
   const toggleEditMode = (e) => {
     e.preventDefault();
     setEditMode((prev) => !prev);
+  };
+  const handleAddTask = (e) => {
+    e.preventDefault();
+    setTasks((prev) => [
+      ...prev,
+      {
+        id: prev.length + 1,
+        name: e.target[0].value,
+        task_done: e.target[1].value,
+        task_total: e.target[2].value,
+      },
+    ]);
+    setAddTaskMode(false);
   };
   return (
     <div className="relative flex flex-col items-center justify-between w-screen h-screen text-black bg-white">
@@ -120,7 +134,7 @@ const ProjectDetails = () => {
           >
             Xoá dự án
           </div>
-          <div
+          {/* <div
             className={`h-full px-3 py-2 rounded-xl border-2 cursor-pointer
             ${
               editMode
@@ -130,10 +144,48 @@ const ProjectDetails = () => {
             onClick={toggleEditMode}
           >
             {editMode ? "Dừng cập nhật" : "Cập nhật dự án"}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex flex-col items-center w-1/3 h-full overflow-y-auto">
+        <div
+          className="w-2/3 text-4xl font-thin border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-white hover:cursor-pointer"
+          onClick={() => setAddTaskMode(true)}
+        >
+          +
+        </div>
+        {addTaskMode && (
+          <form
+            className="flex flex-row items-center justify-between gap-2 mt-10 ml-20 transform bg-white"
+            onSubmit={handleAddTask}
+          >
+            Task mới:
+            <p className="">
+              <input
+                type="text"
+                placeholder="Tên..."
+                className="p-1 bg-white border-2 border-primary rounded-xl"
+              />
+            </p>
+            <input
+              type="text"
+              placeholder="đã hoàn thành"
+              className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
+            />
+            /
+            <input
+              type="text"
+              placeholder="tổng số"
+              className="w-1/4 p-1 bg-white border-2 border-primary rounded-xl"
+            />
+            <button
+              name="submit"
+              className="text-white rounded-full bg-primary hover:bg-primary-200 hover:cursor-pointer"
+            >
+              +
+            </button>
+          </form>
+        )}
         {tasks.map((task, index) => (
           <WorkDetails
             editMode={editMode}
