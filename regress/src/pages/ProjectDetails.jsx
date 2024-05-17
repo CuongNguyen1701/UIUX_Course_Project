@@ -49,9 +49,9 @@ const WorkDetails = ({
         Task {index}: {name}
       </p>
       <div className="flex flex-row items-center gap-5">
-        <div className="w-64 h-2 bg-gray-200 rounded">
+        <div className="w-64 h-2 bg-gray-200 rounded border-black border-1">
           <div
-            className={`h-full ${progressColor} rounded`}
+            className={`h-full ${progressColor} rounded border-2`}
             style={{ width: `${progress}%` }}
           ></div>
         </div>
