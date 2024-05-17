@@ -35,27 +35,23 @@ const CategoryBox = ({ title, task_done, task_total, icon, onClick }) => {
     }
     const percent_done = Math.round(Math.min((task_done / task_total) * 100, 100));
     return (
-        <div>
-            <div className="flex flex-col items-center justify-center h-40 m-4 text-black bg-white border-2 rounded-lg w-60">
-                <div className="flex flex-col">
-                    <div className="flex flex-row m-3">
-                        <img src={icon} alt="icon" className="w-16 h-16" />
-                        <div className="flex flex-col items-center justify-center">
-                            <div className="ml-4 text-lg font-bold">{title}</div>
-                            <div className="text-sm text-gray-500">
-                                <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="flex flex-col items-center justify-center">
-                            <div className={`text-2xl font-bold ${color}`}>{percent_done}%</div>
-                            <div className={`text-lg font-bold ${color}`}>{rating}</div>
+        <div className="flex flex-col items-center justify-center h-40 m-2 text-black bg-white border-2 rounded-lg w-60">
+            <div className="flex flex-col">
+                <div className="flex flex-row m-3">
+                    <img src={icon} alt="icon" className="w-16 h-16" />
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="ml-4 text-lg font-bold">{title}</div>
+                        <div className="text-sm text-gray-500">
+                            <span className={`text-2xl font-bold ${color}`}>{task_done}</span>/{task_total}
                         </div>
                     </div>
                 </div>
-            </div>
-            <div onClick={onClick}>
+                <div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className={`text-2xl font-bold ${color}`}>{percent_done}%</div>
+                        <div className={`text-lg font-bold ${color}`}>{rating}</div>
+                    </div>
+                </div>
             </div>
         </div>
     );
